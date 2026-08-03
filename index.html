@@ -1,349 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haque Games — Name Place Animal Thing (NPAT)</title>
-  <meta name="description" content="Haque Games — makers of NPAT (Name Place Animal Thing), a classic childhood word game revived. Play solo or with friends. Download on the App Store and Google Play." />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faaiz Haque — Application Support Analyst, London</title>
+<meta name="description" content="Faaiz Haque — application support analyst. Five years keeping Barclays Credit Risk platforms running; one mobile game designed and shipped solo. London, UK.">
+<meta property="og:title" content="Faaiz Haque — Application Support Analyst, London">
+<meta property="og:description" content="Five years of production support for Barclays Credit Risk. One mobile game, designed and shipped solo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://faaizhaque.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F8F6;
+    --card:#FFFFFF;
+    --ink:#14181D;
+    --steel:#5A6472;
+    --line:#D8DDE2;
+    --signal:#0E5A8A;
+    --signal-deep:#0A415F;
+    --uptime:#1F7A4D;
+    --tile:#F2C43D;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --body:'Public Sans',system-ui,sans-serif;
+    --display:'Bricolage Grotesque',var(--body);
+    --max:960px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--signal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-    :root {
-      --cream: #f6efda;
-      --paper: #fffdf7;
-      --line: #ece2c9;
-      --ink: #241a0b;
-      --muted: #8c8068;
-      --gold: #f3cf6a;
-      --green: #2f8540;
-      --green-dark: #256b34;
-      --navy: #1f5b86;
-    }
+  /* ---- status strip ---- */
+  .strip{border-bottom:1px solid var(--line);background:var(--card)}
+  .strip .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px;gap:16px;flex-wrap:wrap}
+  .status{font-family:var(--mono);font-size:12.5px;color:var(--steel);display:flex;align-items:center;gap:8px;letter-spacing:.02em}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--uptime);box-shadow:0 0 0 3px rgba(31,122,77,.15);flex:none}
+  @media (prefers-reduced-motion: no-preference){
+    .dot{animation:pulse 2.4s ease-in-out infinite}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(31,122,77,.15)}50%{box-shadow:0 0 0 6px rgba(31,122,77,.05)}}
+  }
+  .strip nav{display:flex;gap:18px;font-family:var(--mono);font-size:12.5px}
+  .strip nav a{color:var(--ink)}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--ink);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background-color: var(--cream);
-      background-image: repeating-linear-gradient(
-        to bottom,
-        transparent 0,
-        transparent 31px,
-        rgba(140, 128, 104, 0.07) 32px
-      );
-      -webkit-font-smoothing: antialiased;
-    }
+  /* ---- hero ---- */
+  .hero{padding:88px 0 72px;border-bottom:1px solid var(--line)}
+  .kicker{font-family:var(--mono);font-size:13px;color:var(--steel);letter-spacing:.04em;margin-bottom:22px}
+  .kicker b{color:var(--ink);font-weight:500}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,7vw,68px);line-height:1.04;letter-spacing:-.02em;max-width:16ch}
+  h1 .own{color:var(--signal)}
+  .sub{margin-top:26px;font-size:18px;color:var(--steel);max-width:52ch}
+  .sub b{color:var(--ink);font-weight:600}
+  .cta{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13.5px;padding:12px 18px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);transition:border-color .15s,transform .15s}
+  .btn:hover{text-decoration:none;border-color:var(--signal);transform:translateY(-1px)}
+  .btn.primary{background:var(--signal);border-color:var(--signal);color:#fff}
+  .btn.primary:hover{background:var(--signal-deep)}
 
-    main {
-      flex: 1;
-      width: 100%;
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 40px 20px 32px;
-    }
+  /* ---- sections ---- */
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);display:flex;align-items:center;gap:10px;margin-bottom:34px}
+  .eyebrow::after{content:"";height:1px;background:var(--line);flex:1}
 
-    /* ---------- Brand wordmark ---------- */
-    .brand {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 36px;
-    }
-    .brand .hg {
-      width: 38px; height: 38px;
-      border: 2.5px solid var(--ink);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 0.82rem; letter-spacing: -0.5px;
-    }
-    .brand .name {
-      font-weight: 800; font-size: 1.15rem; letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .brand .name span { font-weight: 500; color: var(--muted); }
+  /* ---- timeline ---- */
+  .job{display:grid;grid-template-columns:190px 1fr;gap:8px 32px;padding:26px 0}
+  .job + .job{border-top:1px dashed var(--line)}
+  .when{font-family:var(--mono);font-size:13px;color:var(--steel);padding-top:4px}
+  .where{font-family:var(--mono);font-size:12px;color:var(--steel);margin-top:6px}
+  .job h3{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-.01em}
+  .org{color:var(--steel);font-weight:500;font-size:15px;margin-top:2px}
+  .job p{margin-top:10px;color:#333A42;max-width:62ch}
+  .facts{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+  .fact{font-family:var(--mono);font-size:12px;color:var(--signal-deep);background:rgba(14,90,138,.07);border:1px solid rgba(14,90,138,.18);padding:4px 9px;border-radius:4px}
 
-    /* ---------- Hero ---------- */
-    .hero {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 44px 32px 40px;
-      text-align: center;
-      box-shadow: 0 10px 40px rgba(60, 45, 15, 0.06);
-    }
+  /* ---- project ---- */
+  .proj{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:36px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start}
+  .tiles{display:grid;grid-template-columns:repeat(2,56px);gap:8px}
+  .tile{width:56px;height:56px;border-radius:8px;background:var(--paper);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:24px;color:var(--ink);box-shadow:0 2px 0 var(--line)}
+  .tile.gold{background:var(--tile);border-color:#D9A81B;box-shadow:0 2px 0 #C9970D}
+  .proj h3{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.01em}
+  .proj .pub{font-family:var(--mono);font-size:12.5px;color:var(--steel);margin-top:4px}
+  .proj p{margin-top:14px;color:#333A42;max-width:60ch}
+  .stack{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-family:var(--mono);font-size:12px;color:var(--steel);border:1px solid var(--line);padding:4px 9px;border-radius:4px;background:var(--paper)}
+  .stores{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+  .dl{font-family:var(--mono);font-size:12.5px;color:var(--uptime);margin-top:14px}
 
-    .tiles {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 26px;
-    }
-    .tile {
-      width: 60px; height: 60px;
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 2rem;
-      box-shadow: 0 4px 0 rgba(0,0,0,0.06);
-    }
-    .tile.n { background: #f6c8ce; color: #cf3a3f; transform: rotate(-5deg); }
-    .tile.p { background: #fde9a0; color: #b8902a; transform: rotate(3deg); }
-    .tile.a { background: #c0e3b2; color: #57991f; transform: rotate(-3deg); }
-    .tile.t { background: #bcdcf2; color: #2f6f9e; transform: rotate(5deg); }
+  /* ---- skills ---- */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .skillcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px}
+  .skillcard h4{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal-deep);margin-bottom:14px}
+  .skillcard ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .skillcard li{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line);background:var(--paper);padding:4px 9px;border-radius:4px;color:#333A42}
 
-    .hero h1 {
-      font-size: 2.4rem;
-      line-height: 1.1;
-      letter-spacing: -1px;
-      font-weight: 800;
-    }
+  /* ---- education ---- */
+  .edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .edu .skillcard p{color:#333A42}
+  .edu .skillcard .sm{font-family:var(--mono);font-size:12.5px;color:var(--steel);margin-top:6px}
 
-    .tagline {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 7px 18px;
-      background: var(--gold);
-      color: #5a4a1a;
-      border-radius: 999px;
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
+  /* ---- footer ---- */
+  footer{padding:54px 0 64px}
+  footer .big{font-family:var(--display);font-weight:600;font-size:clamp(24px,4vw,34px);letter-spacing:-.01em;max-width:24ch}
+  footer .cta{margin-top:24px}
+  .legal{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--steel)}
+  .legal a{color:var(--steel)}
 
-    .hero p.lede {
-      max-width: 480px;
-      margin: 22px auto 0;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.65;
-    }
+  /* ---- reveal ---- */
+  @media (prefers-reduced-motion: no-preference){
+    .r{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
+    .r.in{opacity:1;transform:none}
+  }
 
-    /* ---------- Store badges ---------- */
-    .stores {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-      background: #161311;
-      color: #fff;
-      text-decoration: none;
-      padding: 11px 20px;
-      border-radius: 14px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
-    }
-    .badge:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
-    .badge svg { flex-shrink: 0; }
-    .badge .b-text { text-align: left; line-height: 1.1; }
-    .badge .b-small { display: block; font-size: 0.62rem; letter-spacing: 0.5px; opacity: 0.85; text-transform: uppercase; }
-    .badge .b-big { display: block; font-size: 1.05rem; font-weight: 600; letter-spacing: -0.2px; }
-
-    /* ---------- Feature strip ---------- */
-    .features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 22px;
-    }
-    .feature {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 22px 24px;
-    }
-    .feature .head {
-      display: inline-block;
-      padding: 5px 14px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 0.3px;
-      margin-bottom: 16px;
-    }
-    .feature.play .head { background: var(--navy); }
-    .feature.cats .head { background: var(--green); }
-
-    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
-    .pill {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: #faf5e6;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 7px 13px;
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: #4a4233;
-    }
-    .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-
-    /* ---------- Green banner ---------- */
-    .banner {
-      margin-top: 22px;
-      background: linear-gradient(135deg, #3f9a4a, #2c7d3b);
-      border-radius: 20px;
-      padding: 24px;
-      text-align: center;
-      color: #fff;
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.3px;
-      box-shadow: 0 8px 24px rgba(47, 133, 64, 0.25);
-    }
-    .banner .accent { color: var(--gold); }
-
-    /* ---------- About ---------- */
-    .about {
-      margin-top: 34px;
-      text-align: center;
-    }
-    .about h2 {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-    .about p {
-      max-width: 560px;
-      margin: 0 auto;
-      color: #6b614c;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    /* ---------- Footer ---------- */
-    footer {
-      text-align: center;
-      padding: 26px 20px 32px;
-      color: #a99e84;
-      font-size: 0.82rem;
-    }
-    footer a { color: #8a7d5f; text-decoration: none; }
-    footer a:hover { color: var(--green); }
-    footer .sep { margin: 0 8px; opacity: 0.5; }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 600px) {
-      .hero { padding: 34px 22px 32px; border-radius: 22px; }
-      .hero h1 { font-size: 1.9rem; }
-      .tile { width: 50px; height: 50px; font-size: 1.6rem; border-radius: 12px; }
-      .features { grid-template-columns: 1fr; }
-      .banner { font-size: 1.2rem; }
-      .stores { gap: 10px; }
-    }
-  </style>
+  @media (max-width:700px){
+    .hero{padding:56px 0 48px}
+    .job{grid-template-columns:1fr;gap:4px 0}
+    .when{padding-top:0}
+    .proj{grid-template-columns:1fr;padding:26px}
+    .tiles{grid-template-columns:repeat(4,52px)}
+    .tile{width:52px;height:52px;font-size:22px}
+    .edu{grid-template-columns:1fr}
+  }
+</style>
 </head>
 <body>
 
-  <main>
-    <div class="brand">
-      <div class="hg">HG</div>
-      <div class="name">Haque <span>Games</span></div>
+<div class="strip">
+  <div class="wrap">
+    <div class="status"><span class="dot" aria-hidden="true"></span>open to senior application support roles &middot; London, UK</div>
+    <nav>
+      <a href="#experience">experience</a>
+      <a href="#project">project</a>
+      <a href="#skills">skills</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker"><b>FAAIZ HAQUE</b> &middot; Senior Application Support Analyst &middot; ex-Barclays</p>
+    <h1>I keep critical systems running. And I ship <span class="own">my own.</span></h1>
+    <p class="sub">Five years of production support for <b>Barclays Credit Risk</b> — P1/P2 incident command, AutoSys batch operations, Python and SQL automation. Then a year building a mobile game, designed and shipped <b>solo</b> to both app stores.</p>
+    <div class="cta">
+      <a class="btn primary" href="Faaiz_Haque_CV.pdf" download>Download CV (PDF)</a>
+      <a class="btn" href="https://www.linkedin.com/in/faaiz-haque-202061145" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="mailto:faaizhaque@gmail.com">faaizhaque@gmail.com</a>
+    </div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="wrap">
+    <p class="eyebrow">Experience</p>
+
+    <div class="job r">
+      <div><div class="when">Aug 2025 — Present</div><div class="where">iOS &amp; Android</div></div>
+      <div>
+        <h3>Independent Mobile Developer</h3>
+        <p class="org">Haque Games (self-published)</p>
+        <p>Designed, built and shipped a cross-platform word game end to end — gameplay, backend, store releases and monetisation — iterating on live user feedback through phased rollouts and A/B tests.</p>
+        <div class="facts"><span class="fact">2,000+ downloads</span><span class="fact">React Native</span><span class="fact">Supabase</span><span class="fact">solo build</span></div>
+      </div>
     </div>
 
-    <section class="hero">
-      <div class="tiles">
-        <div class="tile n">N</div>
-        <div class="tile p">P</div>
-        <div class="tile a">A</div>
-        <div class="tile t">T</div>
+    <div class="job r">
+      <div><div class="when">Jan 2023 — Aug 2025</div><div class="where">London &middot; hybrid</div></div>
+      <div>
+        <h3>Senior Application Support Analyst — Credit Risk</h3>
+        <p class="org">Barclays</p>
+        <p>Owned day-to-day support for 8 applications on the client risk rating platform: P1/P2 incidents commanded end to end, change and release coordination through ServiceNow, and faults traced through AutoSys, MySQL and Linux logs. Wrote the 150+ entry knowledge base users rated 95/100.</p>
+        <div class="facts"><span class="fact">3,000+ users</span><span class="fact">99% uptime</span><span class="fact">100+ issues cleared / quarter</span></div>
       </div>
+    </div>
 
-      <h1>Name Place<br />Animal Thing</h1>
-      <span class="tagline">A Classic Childhood Game — Revived</span>
-
-      <p class="lede">
-        Race against the clock to fill in every category before time runs out.
-        Play a quick solo challenge or go head-to-head with friends and family.
-      </p>
-
-      <div class="stores">
-        <a class="badge" href="https://apps.apple.com/gb/app/name-place-animal-things-napt/id6759828697" target="_blank" rel="noopener">
-          <svg width="24" height="24" viewBox="0 0 384 512" fill="#fff" aria-hidden="true">
-            <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
-          </svg>
-          <span class="b-text">
-            <span class="b-small">Download on the</span>
-            <span class="b-big">App Store</span>
-          </span>
-        </a>
-
-        <a class="badge" href="https://play.google.com/store/apps/details?id=com.haquegames.napt&utm_source=emea_Med" target="_blank" rel="noopener">
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <defs>
-              <linearGradient id="gp" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#f6c8ce"/>
-                <stop offset="0.35" stop-color="#fde9a0"/>
-                <stop offset="0.7" stop-color="#8fd06a"/>
-                <stop offset="1" stop-color="#3fa0e0"/>
-              </linearGradient>
-            </defs>
-            <polygon points="5,3 20,12 5,21" fill="url(#gp)" stroke="url(#gp)" stroke-width="2.4" stroke-linejoin="round"/>
-          </svg>
-          <span class="b-text">
-            <span class="b-small">Get it on</span>
-            <span class="b-big">Google Play</span>
-          </span>
-        </a>
+    <div class="job r">
+      <div><div class="when">Oct 2021 — Jan 2023</div><div class="where">London &middot; hybrid</div></div>
+      <div>
+        <h3>Application Support Analyst — Post-Trade Risk (RWA)</h3>
+        <p class="org">Barclays &middot; Acting Team Lead</p>
+        <p>Stepped up to lead a team of 10 engineers for 15 months while the role sat vacant. Automated manual operations with Python, Bash and SQL, and led CutOver disaster recovery exercises across a multi-tool production estate.</p>
+        <div class="facts"><span class="fact">team of 10</span><span class="fact">~1 hr saved / engineer / day</span><span class="fact">99% change success</span></div>
       </div>
-    </section>
+    </div>
 
-    <div class="features">
-      <div class="feature play">
-        <span class="head">PLAY YOUR WAY</span>
-        <div class="pill-row">
-          <span class="pill"><span class="dot" style="background:#57991f"></span>Solo Challenge</span>
-          <span class="pill"><span class="dot" style="background:#2f6f9e"></span>With Friends &amp; Family</span>
-          <span class="pill"><span class="dot" style="background:#cf3a3f"></span>Daily Challenge</span>
+    <div class="job r">
+      <div><div class="when">Aug 2020 — Oct 2021</div><div class="where">Glasgow &middot; remote</div></div>
+      <div>
+        <h3>AWS Cloud Support Analyst</h3>
+        <p class="org">Barclays &middot; Graduate Programme</p>
+        <p>Supported an AWS ETL platform processing bank-wide risk and financial data — EC2, S3, Step Functions, CloudWatch — resolving 400+ production incidents through log analysis and cross-team troubleshooting.</p>
+        <div class="facts"><span class="fact">400+ incidents resolved</span><span class="fact">-30% monthly volume</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="project">
+  <div class="wrap">
+    <p class="eyebrow">Project</p>
+    <div class="proj r">
+      <div class="tiles" aria-hidden="true">
+        <div class="tile">N</div><div class="tile">P</div><div class="tile gold">A</div><div class="tile">T</div>
+      </div>
+      <div>
+        <h3>Name, Place, Animal, Thing</h3>
+        <p class="pub">published under Haque Games &middot; live on both stores</p>
+        <p>The classic childhood word game, revived. Race the clock to fill every category — solo, with friends, or in a daily challenge. Built alone from first sketch to store release: gameplay logic, a 100k-word curated database, backend, launch site, phased rollouts and ad monetisation.</p>
+        <div class="stack">
+          <span class="chip">React Native</span><span class="chip">Supabase</span><span class="chip">Railway</span><span class="chip">AdMob</span><span class="chip">AppLovin</span><span class="chip">Vungle</span><span class="chip">A/B testing</span>
         </div>
-      </div>
-
-      <div class="feature cats">
-        <span class="head">CATEGORIES</span>
-        <div class="pill-row">
-          <span class="pill"><span class="dot" style="background:#cf3a3f"></span>Name</span>
-          <span class="pill"><span class="dot" style="background:#b8902a"></span>Place</span>
-          <span class="pill"><span class="dot" style="background:#57991f"></span>Animal</span>
-          <span class="pill"><span class="dot" style="background:#2f6f9e"></span>Thing</span>
-          <span class="pill"><span class="dot" style="background:#7a4fb0"></span>Countries</span>
-          <span class="pill"><span class="dot" style="background:#d9822b"></span>Professions</span>
-          <span class="pill"><span class="dot" style="background:#e0b400"></span>Famous People</span>
-          <span class="pill"><span class="dot" style="background:#d14b4b"></span>Food / Dishes</span>
+        <div class="stores">
+          <a class="btn" href="https://apps.apple.com/gb/app/name-place-animal-things-napt/id6759828697" target="_blank" rel="noopener">App Store ↗</a>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.haquegames.napt" target="_blank" rel="noopener">Google Play ↗</a>
         </div>
+        <p class="dl">▲ 2,000+ downloads and counting</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="banner">
-      Think fast. Name smart. <span class="accent">Win more!</span>
+<section id="skills">
+  <div class="wrap">
+    <p class="eyebrow">Skills</p>
+    <div class="skills">
+      <div class="skillcard r">
+        <h4>Support &amp; process</h4>
+        <ul><li>Production Support</li><li>Major Incidents (P1/P2)</li><li>ITIL</li><li>Change &amp; Release</li><li>SLA Management</li><li>Root Cause Analysis</li><li>Disaster Recovery</li><li>Knowledge Bases</li></ul>
+      </div>
+      <div class="skillcard r">
+        <h4>Scripting &amp; data</h4>
+        <ul><li>Python</li><li>Bash</li><li>SQL (MySQL)</li><li>Data Analysis</li></ul>
+      </div>
+      <div class="skillcard r">
+        <h4>Platforms</h4>
+        <ul><li>Linux</li><li>Windows</li><li>AWS — EC2, S3, CloudWatch, IAM, Step Functions</li></ul>
+      </div>
+      <div class="skillcard r">
+        <h4>Tools</h4>
+        <ul><li>AutoSys (JIL)</li><li>ServiceNow</li><li>xMatters</li><li>Jira</li><li>Confluence</li><li>Bitbucket</li><li>Git</li></ul>
+      </div>
     </div>
+  </div>
+</section>
 
-    <section class="about">
-      <h2>About</h2>
-      <p>
-        Haque Games is an indie mobile game studio building simple, fun, social
-        games for iOS and Android. For support or inquiries, reach out via the
-        app store listing or our support page.
-      </p>
-    </section>
-  </main>
+<section id="education">
+  <div class="wrap">
+    <p class="eyebrow">Education &amp; certification</p>
+    <div class="edu">
+      <div class="skillcard r">
+        <h4>Degree</h4>
+        <p>BSc Computer Engineering, First Class</p>
+        <p class="sm">Bilkent University, Ankara &middot; 2015 – 2019</p>
+      </div>
+      <div class="skillcard r">
+        <h4>Certification</h4>
+        <p>AWS Certified Cloud Practitioner</p>
+        <p class="sm">Amazon Web Services</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2026 Haque Games
-    <span class="sep">|</span>
-    <a href="/support.html">Support</a>
-    <span class="sep">|</span>
-    <a href="/privacy-policy.html">Privacy Policy</a>
-    <span class="sep">|</span>
-    <a href="/app-ads.txt">app-ads.txt</a>
-  </footer>
+<footer id="contact">
+  <div class="wrap">
+    <p class="big">Recruiting for application or production support in London? Let's talk.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:faaizhaque@gmail.com">Email Faaiz</a>
+      <a class="btn" href="https://www.linkedin.com/in/faaiz-haque-202061145" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="Faaiz_Haque_CV.pdf" download>Download CV</a>
+    </div>
+    <div class="legal">
+      <span>© 2026 Faaiz Haque &middot; Haque Games</span>
+      <span><a href="support.html">App support</a> &nbsp;&middot;&nbsp; <a href="privacy-policy.html">Privacy policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((es) => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.r').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.r').forEach(el => el.classList.add('in'));
+  }
+</script>
 
 </body>
 </html>
