@@ -235,6 +235,16 @@
   .educard .aws-mark .aws-t{font-size:30px}
   @media (max-width:720px){.edu{grid-template-columns:1fr}}
 
+  /* ================= why ================= */
+  .why{max-width:860px}
+  .case{display:grid;grid-template-columns:88px 1fr;gap:8px 28px;padding:30px 0;border-top:1px dashed var(--line)}
+  .case:last-child{border-bottom:1px dashed var(--line)}
+  .case .idx{font-family:var(--display);font-weight:800;font-size:34px;color:transparent;-webkit-text-stroke:1.5px var(--acid);padding-top:2px}
+  .case h3{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.01em}
+  .case p{margin-top:8px;color:var(--muted);max-width:58ch}
+  .case p b{color:var(--ink)}
+  @media (max-width:640px){.case{grid-template-columns:1fr;gap:4px}.case .idx{font-size:26px}}
+
   /* ================= footer ================= */
   footer{padding:90px 0 60px}
   .shout{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
@@ -293,6 +303,8 @@
       <a href="#now">now</a>
       <a href="#before">before</a>
       <a href="#skills">skills</a>
+      <a href="#why">why me</a>
+      <a href="#contact">contact</a>
       <a class="hire" href="mailto:faaizhaque@gmail.com">email me</a>
     </nav>
   </div>
@@ -505,6 +517,51 @@
         <div>
           <h3>AWS Certified Cloud Practitioner</h3>
           <p class="sm">Amazon Web Services</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ why ============ -->
+<section id="why">
+  <div class="wrap">
+    <p class="eyebrow">The pitch</p>
+    <h2>Why me? <span class="dim">Glad you asked.</span></h2>
+    <div class="why">
+      <div class="case r">
+        <div class="idx">01</div>
+        <div>
+          <h3>I've run production from both sides of the table.</h3>
+          <p>Five years inside a bank's change-controlled estate, then a year as founder — the one who gets paged <b>and</b> the one who shipped the code. I know why process exists, and I know when to move fast.</p>
+        </div>
+      </div>
+      <div class="case r">
+        <div class="idx">02</div>
+        <div>
+          <h3>Incidents don't rattle me.</h3>
+          <p>P1 bridge calls with <b>3,000+ users</b> waiting are muscle memory: command the call, communicate clearly, fix it, then write the post-mortem people actually read — my knowledge base scored <b>95/100</b> with its users.</p>
+        </div>
+      </div>
+      <div class="case r">
+        <div class="idx">03</div>
+        <div>
+          <h3>I delete toil instead of doing it twice.</h3>
+          <p>Python, Bash and SQL automation that gave every engineer on my team back <b>about an hour a day</b>. Repetitive work is a bug, and I treat it like one.</p>
+        </div>
+      </div>
+      <div class="case r">
+        <div class="idx">04</div>
+        <div>
+          <h3>Zero hand-holding required.</h3>
+          <p>Led <b>10 engineers for 15 months</b> when the team-lead seat sat empty — nobody had to ask twice. Then founded a company nobody asked for at all.</p>
+        </div>
+      </div>
+      <div class="case r">
+        <div class="idx">05</div>
+        <div>
+          <h3>Proof, not promises.</h3>
+          <p>Everything on this page is checkable: the uptime, the downloads, the apps live on <b>both stores</b>. Ask me about any of it — that's what the button below is for.</p>
         </div>
       </div>
     </div>
