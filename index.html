@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faaiz Haque — Computer Engineer &amp; Founder, UK</title>
-<meta name="description" content="I'm Faaiz. Five years keeping Barclays risk platforms alive, then I founded Haque Games and shipped a word game to both app stores. UK-based, actively looking for my next role.">
-<meta property="og:title" content="Faaiz Haque — Computer Engineer &amp; Founder, UK">
-<meta property="og:description" content="Five years of production support at Barclays. One game studio, founded solo. Actively looking — UK.">
+<title>Faaiz Haque — Application Support Analyst · Open to Work, UK</title>
+<meta name="description" content="Senior Application Support Analyst, actively looking for my next role in the UK. Five years keeping Barclays risk platforms alive, then I founded Haque Games and shipped a word game to both app stores.">
+<meta property="og:title" content="Faaiz Haque — Application Support Analyst · Open to Work, UK">
+<meta property="og:description" content="Actively looking: application support / SRE / cloud ops, UK. Five years at Barclays, one game studio founded solo.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://faaizhaque.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230D0D0B'/%3E%3Ctext x='32' y='46' font-family='Arial Black,sans-serif' font-size='40' font-weight='900' fill='%23C9F73A' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
@@ -19,7 +19,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Faaiz Haque",
-  "jobTitle": "Computer Engineer & Founder",
+  "jobTitle": "Senior Application Support Analyst & Founder",
   "url": "https://faaizhaque.github.io/",
   "email": "mailto:faaizhaque@gmail.com",
   "sameAs": [
@@ -105,7 +105,19 @@
   .sub{margin-top:32px;font-size:19px;color:var(--muted);max-width:56ch}
   .sub b{color:var(--ink);font-weight:700}
   .sub a{color:var(--acid);border-bottom:1px solid var(--acid)}
-  .cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .looking{
+    margin-top:30px;display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;
+    font-family:var(--mono);font-size:14px;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--ink);border:2px solid var(--acid);background:rgba(201,247,58,.08);
+    padding:13px 18px;box-shadow:5px 5px 0 rgba(201,247,58,.25);
+  }
+  .looking b{color:var(--acid);font-weight:700}
+  .looking .dot{width:10px;height:10px;border-radius:50%;background:var(--acid);flex:none}
+  @media (prefers-reduced-motion: no-preference){
+    .looking .dot{animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,247,58,.5)}50%{box-shadow:0 0 0 7px rgba(201,247,58,0)}}
+  }
+  .cta{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
   .btn{
     display:inline-flex;align-items:center;gap:9px;
     font-family:var(--mono);font-size:14px;font-weight:700;
@@ -289,9 +301,10 @@
 <!-- ============ hero ============ -->
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="kicker"><span class="flag">FAAIZ HAQUE</span> · COMPUTER ENGINEER · FOUNDER · 🇬🇧 UK</p>
+    <p class="kicker"><span class="flag">FAAIZ HAQUE</span> · SENIOR APPLICATION SUPPORT ANALYST · FOUNDER · 🇬🇧 UK</p>
     <h1>I keep systems alive.<br><span class="hollow">Then I built my own.</span></h1>
-    <p class="sub">Five years commanding <b>P1 incidents on Barclays risk platforms</b> — then I quit, founded <a href="https://haquegames.com/" target="_blank" rel="noopener">Haque Games</a>, and shipped a word game to <b>both app stores, solo</b>. Now I want back on a team running production systems at scale — anywhere in the UK.</p>
+    <p class="sub">Five years commanding <b>P1 incidents on Barclays risk platforms</b> — then I quit, founded <a href="https://haquegames.com/" target="_blank" rel="noopener">Haque Games</a>, and shipped a word game to <b>both app stores, solo</b>. Now I want back on a team running production systems at scale.</p>
+    <p class="looking"><span class="dot" aria-hidden="true"></span><b>ACTIVELY LOOKING</b> — application support · SRE · cloud ops — anywhere in the UK</p>
     <div class="cta">
       <a class="btn acid" href="mailto:faaizhaque@gmail.com">Email me →</a>
       <!-- Restore once Faaiz_Haque_CV.pdf is committed to the repo root:
@@ -501,7 +514,7 @@
 <!-- ============ footer ============ -->
 <footer id="contact">
   <div class="wrap">
-    <p class="shout">Recruiting in the UK? Skip the funnel —</p>
+    <p class="shout">Recruiting application support in the UK? Skip the funnel —</p>
     <a class="mega" href="mailto:faaizhaque@gmail.com">Email me <span class="arrow">→</span></a>
     <p class="addr"><a href="mailto:faaizhaque@gmail.com">faaizhaque@gmail.com</a> · goes straight to me.</p>
 
