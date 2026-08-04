@@ -12,7 +12,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230D0D0B'/%3E%3Ctext x='32' y='46' font-family='Arial Black,sans-serif' font-size='40' font-weight='900' fill='%23C9F73A' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
@@ -46,7 +46,7 @@
     --gold:#F2C43D;
     --mono:'JetBrains Mono',ui-monospace,monospace;
     --body:'Space Grotesk',system-ui,sans-serif;
-    --display:'Syne',var(--body);
+    --display:var(--body);
     --max:1080px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -66,22 +66,18 @@
   :focus-visible{outline:2px solid var(--acid);outline-offset:3px}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-  /* ================= ticker ================= */
-  .ticker{background:var(--acid);color:#0D0D0B;overflow:hidden;border-bottom:2px solid #0D0D0B}
-  .ticker a{color:inherit;display:block}
-  .ticker a:focus-visible{outline:2px solid #0D0D0B;outline-offset:-4px}
-  .tick-track{display:flex;width:max-content;white-space:nowrap}
-  .tick-track span{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.08em;padding:9px 0;text-transform:uppercase}
-  @media (prefers-reduced-motion: no-preference){
-    .tick-track{animation:tick 26s linear infinite}
-    .ticker:hover .tick-track,.ticker:focus-within .tick-track{animation-play-state:paused}
-    @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  /* ================= top banner ================= */
+  .ticker{background:var(--acid);color:#0D0D0B;border-bottom:2px solid #0D0D0B}
+  .ticker a{
+    color:inherit;display:block;text-align:center;padding:9px 20px;
+    font-family:var(--mono);font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
   }
+  .ticker a:focus-visible{outline:2px solid #0D0D0B;outline-offset:-4px}
 
   /* ================= nav ================= */
   .nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,13,11,.88);backdrop-filter:blur(8px);z-index:50}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px;gap:16px}
-  .fh{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .fh{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.02em}
   .fh b{color:var(--acid)}
   .nav nav{display:flex;gap:20px;align-items:center;font-family:var(--mono);font-size:13px}
   .nav nav a{color:var(--muted)}
@@ -92,24 +88,24 @@
 
   /* ================= hero ================= */
   .hero{padding:96px 0 72px;position:relative;border-bottom:1px solid var(--line)}
-  .kicker{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .kicker{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;column-gap:10px;row-gap:4px;flex-wrap:wrap}
+  .kicker span{white-space:nowrap}
+  .kicker span:not(:last-child)::after{content:" ·";color:var(--muted)}
   .kicker .flag{color:var(--ink)}
   h1{
-    font-family:var(--display);font-weight:800;
-    font-size:clamp(44px,8.5vw,96px);line-height:.98;letter-spacing:-.03em;
-    text-transform:uppercase;max-width:14ch;
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(42px,7vw,80px);line-height:1.04;letter-spacing:-.03em;
+    max-width:18ch;
   }
-  h1 .hollow{
-    color:transparent;-webkit-text-stroke:2px var(--acid);
-  }
+  h1 .acc{color:var(--acid)}
   .sub{margin-top:32px;font-size:19px;color:var(--muted);max-width:56ch}
   .sub b{color:var(--ink);font-weight:700}
   .sub a{color:var(--acid);border-bottom:1px solid var(--acid)}
   .looking{
     margin-top:30px;display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;
     font-family:var(--mono);font-size:14px;letter-spacing:.04em;text-transform:uppercase;
-    color:var(--ink);border:2px solid var(--acid);background:rgba(201,247,58,.08);
-    padding:13px 18px;box-shadow:5px 5px 0 rgba(201,247,58,.25);
+    color:var(--ink);border:1px solid var(--acid);background:rgba(201,247,58,.08);
+    padding:13px 18px;
   }
   .looking b{color:var(--acid);font-weight:700}
   .looking .dot{width:10px;height:10px;border-radius:50%;background:var(--acid);flex:none}
@@ -129,20 +125,6 @@
   .btn.acid:hover{box-shadow:4px 4px 0 var(--ink)}
   .btn svg{flex:none}
 
-  /* open-to-work stamp */
-  .stamp{
-    position:absolute;right:24px;top:88px;width:150px;height:150px;
-    display:grid;place-items:center;pointer-events:none;
-  }
-  .stamp svg{position:absolute;inset:0;width:100%;height:100%}
-  @media (prefers-reduced-motion: no-preference){
-    .stamp svg{animation:spin 24s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
-  }
-  .stamp svg text{fill:var(--acid);font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.24em}
-  .stamp .core{width:56px;height:56px;border:2px solid var(--acid);border-radius:50%;display:grid;place-items:center;color:var(--acid);font-family:var(--display);font-weight:800;font-size:18px;transform:rotate(-8deg)}
-  @media (max-width:900px){.stamp{display:none}}
-
   /* ================= logo wall ================= */
   .wall{border-bottom:1px solid var(--line);background:var(--panel)}
   .wall .wrap{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-top:34px;padding-bottom:34px}
@@ -160,28 +142,28 @@
   section{padding:84px 0;border-bottom:1px solid var(--line);position:relative}
   .eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid);display:flex;align-items:center;gap:12px;margin-bottom:16px}
   .eyebrow::before{content:"";width:34px;height:2px;background:var(--acid)}
-  h2{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.6vw,52px);letter-spacing:-.02em;text-transform:uppercase;margin-bottom:40px}
+  h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;margin-bottom:40px}
   h2 .dim{color:var(--muted)}
 
   /* ================= now / haque games ================= */
   .studio{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
-  .studio-card{border:2px solid var(--ink);background:var(--panel);padding:32px;box-shadow:8px 8px 0 var(--acid)}
-  .studio-card .hg{font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:-.02em}
+  .studio-card{border:1px solid var(--acid);background:var(--panel);padding:32px;box-shadow:0 8px 28px rgba(0,0,0,.35)}
+  .studio-card .hg{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.02em}
   .studio-card .hg b{color:var(--acid)}
   .studio-card .role{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
   .studio-card p{margin-top:16px;color:var(--muted)}
   .studio-card p b{color:var(--ink)}
   .studio-card .site{display:inline-flex;margin-top:18px;font-family:var(--mono);font-size:13.5px;font-weight:700;color:var(--acid);border-bottom:2px solid var(--acid);padding-bottom:2px}
 
-  .game h3{font-family:var(--display);font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:-.01em;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .game h3{font-family:var(--display);font-weight:700;font-size:clamp(24px,3vw,34px);letter-spacing:-.01em;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
   .flagship{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;color:#0D0D0B;background:var(--gold);padding:4px 9px;text-transform:uppercase}
   .tiles{display:flex;gap:10px;margin:22px 0 2px}
-  .tile{width:58px;height:58px;border:2px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:26px;background:var(--panel-2);box-shadow:0 4px 0 var(--line)}
+  .tile{width:58px;height:58px;border:2px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:26px;background:var(--panel-2);box-shadow:0 4px 0 var(--line)}
   .tile.gold{background:var(--gold);color:#0D0D0B;border-color:var(--gold);box-shadow:0 4px 0 #B08A15}
   .game p{margin-top:20px;color:var(--muted);max-width:58ch}
   .game p b{color:var(--ink)}
   .stats{display:flex;gap:36px;margin-top:26px;flex-wrap:wrap}
-  .stat .n{font-family:var(--display);font-weight:800;font-size:30px;color:var(--acid)}
+  .stat .n{font-family:var(--display);font-weight:700;font-size:30px;color:var(--acid)}
   .stat .l{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
   .chips{margin-top:24px;display:flex;flex-wrap:wrap;gap:9px}
   .chip{font-family:var(--mono);font-size:12.5px;color:var(--muted);border:1px solid var(--line);padding:5px 10px;background:var(--panel)}
@@ -206,12 +188,11 @@
     border-top:1px dashed var(--line);
   }
   .job:last-child{border-bottom:1px dashed var(--line)}
-  .idx{font-family:var(--display);font-weight:800;font-size:26px;color:transparent;-webkit-text-stroke:1.5px var(--muted)}
+  .idx{font-family:var(--mono);font-weight:700;font-size:20px;color:var(--muted);padding-top:4px}
   .when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:6px}
   .where{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:6px}
   .job h3{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.01em}
-  .org{font-family:var(--mono);font-size:13px;color:var(--barclays);margin-top:3px}
-  .job .org.aws-org{color:var(--aws)}
+  .org{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:3px}
   .job p{margin-top:12px;color:var(--muted);max-width:64ch}
   .job p b{color:var(--ink)}
   .facts{margin-top:14px;display:flex;flex-wrap:wrap;gap:9px}
@@ -239,7 +220,7 @@
   .why{max-width:860px}
   .case{display:grid;grid-template-columns:88px 1fr;gap:8px 28px;padding:30px 0;border-top:1px dashed var(--line)}
   .case:last-child{border-bottom:1px dashed var(--line)}
-  .case .idx{font-family:var(--display);font-weight:800;font-size:34px;color:transparent;-webkit-text-stroke:1.5px var(--acid);padding-top:2px}
+  .case .idx{font-family:var(--mono);font-weight:700;font-size:22px;color:var(--muted);padding-top:4px}
   .case h3{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.01em}
   .case p{margin-top:8px;color:var(--muted);max-width:58ch}
   .case p b{color:var(--ink)}
@@ -249,8 +230,8 @@
   footer{padding:90px 0 60px}
   .shout{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
   .mega{
-    display:block;font-family:var(--display);font-weight:800;
-    font-size:clamp(52px,11vw,132px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase;
+    display:block;font-family:var(--display);font-weight:700;
+    font-size:clamp(48px,9vw,110px);line-height:.98;letter-spacing:-.03em;
     color:var(--ink);width:fit-content;
   }
   .mega .arrow{color:var(--acid)}
@@ -281,24 +262,21 @@
     .hero{padding:64px 0 52px}
     section{padding:64px 0}
     .tiles{flex-wrap:wrap}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
   }
 </style>
 </head>
 <body>
 
-<!-- ============ ticker ============ -->
+<!-- ============ top banner ============ -->
 <div class="ticker">
-  <a href="#contact" aria-label="Actively looking for my next role in the UK — contact me">
-    <div class="tick-track" aria-hidden="true">
-      <span>&nbsp;★ ACTIVELY LOOKING FOR MY NEXT ROLE&nbsp;&nbsp;★ UK&nbsp;&nbsp;★ APPLICATION SUPPORT · SRE · CLOUD OPS&nbsp;&nbsp;★ AVAILABLE NOW&nbsp;&nbsp;★ SAY HELLO ↓&nbsp;&nbsp;</span><span>&nbsp;★ ACTIVELY LOOKING FOR MY NEXT ROLE&nbsp;&nbsp;★ UK&nbsp;&nbsp;★ APPLICATION SUPPORT · SRE · CLOUD OPS&nbsp;&nbsp;★ AVAILABLE NOW&nbsp;&nbsp;★ SAY HELLO ↓&nbsp;&nbsp;</span>
-    </div>
-  </a>
+  <a href="#contact">Actively looking for my next role — UK · say hello ↓</a>
 </div>
 
 <!-- ============ nav ============ -->
 <div class="nav">
   <div class="wrap">
-    <a class="fh" href="#top">FAAIZ<b>.</b></a>
+    <a class="fh" href="#top">Faaiz<b>.</b></a>
     <nav>
       <a href="#now">now</a>
       <a href="#before">before</a>
@@ -313,8 +291,8 @@
 <!-- ============ hero ============ -->
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="kicker"><span class="flag">FAAIZ HAQUE</span> · SENIOR APPLICATION SUPPORT ANALYST · FOUNDER · 🇬🇧 UK</p>
-    <h1>I keep systems alive.<br><span class="hollow">Then I built my own.</span></h1>
+    <p class="kicker"><span class="flag">FAAIZ HAQUE</span> <span>SENIOR APPLICATION SUPPORT ANALYST</span> <span>FOUNDER</span> <span>🇬🇧 UK</span></p>
+    <h1>Hi, I'm <span class="acc">Faaiz.</span></h1>
     <p class="sub">Five years commanding <b>P1 incidents on Barclays risk platforms</b> — then I quit, founded <a href="https://haquegames.com/" target="_blank" rel="noopener">Haque Games</a>, and shipped a word game to <b>both app stores, solo</b>. Now I want back on a team running production systems at scale.</p>
     <p class="looking"><span class="dot" aria-hidden="true"></span><b>ACTIVELY LOOKING</b> — application support · SRE · cloud ops — anywhere in the UK</p>
     <div class="cta">
@@ -327,19 +305,12 @@
       </a>
     </div>
   </div>
-  <div class="stamp" aria-hidden="true">
-    <svg viewBox="0 0 150 150">
-      <defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
-      <text><textPath href="#circ">OPEN TO WORK · UK · OPEN TO WORK ·</textPath></text>
-    </svg>
-    <div class="core">FH</div>
-  </div>
 </header>
 
 <!-- ============ logo wall ============ -->
 <div class="wall">
   <div class="wrap">
-    <p class="label">The receipts —</p>
+    <p class="label">At a glance —</p>
     <span class="logo" title="Barclays — 5 years"><span class="barclays-word">BARCLAYS</span></span>
     <span class="logo" title="AWS Certified Cloud Practitioner">
       <span class="aws-mark">
@@ -371,11 +342,11 @@
 <section id="now">
   <div class="wrap">
     <p class="eyebrow">Now · 2025 — present</p>
-    <h2>My startup<span class="dim">, not a side quest.</span></h2>
+    <h2>My startup<span class="dim">, not a side project.</span></h2>
     <div class="studio">
       <div class="studio-card r">
-        <p class="hg">HAQUE <b>GAMES</b></p>
-        <p class="role">Founder · everything dept.</p>
+        <p class="hg">Haque <b>Games</b></p>
+        <p class="role">Founder · sole developer</p>
         <p>My independent game studio. One person, <b>every job title</b> — design, code, backend, store ops, marketing, monetisation. From nothing to live on both stores — and still shipping.</p>
         <a class="site" href="https://haquegames.com/" target="_blank" rel="noopener">haquegames.com ↗</a>
       </div>
@@ -451,7 +422,7 @@
         <div><div class="when">Aug 2020 — Oct 2021</div><div class="where">Glasgow · remote</div></div>
         <div>
           <h3>AWS Cloud Support Analyst</h3>
-          <p class="org aws-org">BARCLAYS · GRADUATE PROGRAMME · AWS</p>
+          <p class="org">BARCLAYS · GRADUATE PROGRAMME · AWS</p>
           <p>Supported an AWS ETL platform processing <b>bank-wide risk and financial data</b> — EC2, S3, Step Functions, CloudWatch — resolving 400+ production incidents through log analysis and cross-team troubleshooting.</p>
           <div class="facts"><span class="fact">400+ incidents resolved</span><span class="fact">-30% monthly volume</span></div>
         </div>
@@ -463,7 +434,7 @@
 <!-- ============ skills ============ -->
 <section id="skills">
   <div class="wrap">
-    <p class="eyebrow">Arsenal</p>
+    <p class="eyebrow">Toolkit</p>
     <h2>What I run <span class="dim">in production.</span></h2>
     <div class="skills">
       <div class="skillcard r">
@@ -489,7 +460,7 @@
 <!-- ============ education ============ -->
 <section id="education">
   <div class="wrap">
-    <p class="eyebrow">Paper trail</p>
+    <p class="eyebrow">Education</p>
     <h2>Degree &amp; <span class="dim">certification.</span></h2>
     <div class="edu">
       <div class="educard r">
@@ -539,7 +510,7 @@
       <div class="case r">
         <div class="idx">02</div>
         <div>
-          <h3>Range most CVs can't offer.</h3>
+          <h3>Unusual range for one CV.</h3>
           <p>AWS cloud support, banking production support, team leadership, and a mobile game built end to end — all on a <b>First-Class Computer Engineering degree</b>. Whichever layer breaks — infra, app or code — I've worked in it.</p>
         </div>
       </div>
@@ -561,7 +532,7 @@
         <div class="idx">05</div>
         <div>
           <h3>Zero hand-holding required.</h3>
-          <p>Stepped up as acting team lead when the seat sat empty and <b>onboarded and trained over 10 engineers</b> — nobody had to ask twice. Then with <b>NPAT</b> I went fully solo: <b>shipped it to both stores, won real customers, and covered every role myself</b>.</p>
+          <p>Stepped up as acting team lead when the seat sat empty and <b>onboarded and trained over 10 engineers</b>. Then with <b>NPAT</b> I went fully solo: <b>shipped it to both stores, won real customers, and covered every role myself</b>.</p>
         </div>
       </div>
       <div class="case r">
@@ -580,7 +551,7 @@
   <div class="wrap">
     <p class="shout">Recruiting application support in the UK? Skip the funnel —</p>
     <a class="mega" href="mailto:faaizhaque@gmail.com">Email me <span class="arrow">→</span></a>
-    <p class="addr"><a href="mailto:faaizhaque@gmail.com">faaizhaque@gmail.com</a> · goes straight to me.</p>
+    <p class="addr"><a href="mailto:faaizhaque@gmail.com">faaizhaque@gmail.com</a> <span style="white-space:nowrap">· goes straight to me.</span></p>
 
     <div class="links">
       <a class="link" href="https://github.com/FaaizHaque" target="_blank" rel="noopener">
@@ -605,7 +576,7 @@
         Google Play <span class="ext">↗</span>
       </a>
       <a class="link" href="https://haquegames.com/" target="_blank" rel="noopener">
-        <span style="font-family:var(--display);font-weight:800;font-size:17px" aria-hidden="true">HG</span>
+        <span style="font-family:var(--display);font-weight:700;font-size:17px" aria-hidden="true">HG</span>
         haquegames.com <span class="ext">↗</span>
       </a>
       <!-- Restore once Faaiz_Haque_CV.pdf is committed to the repo root:
