@@ -3,235 +3,447 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Faaiz Haque — Application Support Analyst, London</title>
-<meta name="description" content="Faaiz Haque — application support analyst. Five years keeping Barclays Credit Risk platforms running; one mobile game designed and shipped solo. London, UK.">
-<meta property="og:title" content="Faaiz Haque — Application Support Analyst, London">
-<meta property="og:description" content="Five years of production support for Barclays Credit Risk. One mobile game, designed and shipped solo.">
+<title>Faaiz Haque — Computer Engineer &amp; Founder, UK</title>
+<meta name="description" content="I'm Faaiz. Five years keeping Barclays risk platforms alive, then I founded Haque Games and shipped a word game to both app stores. UK-based, actively looking for my next role.">
+<meta property="og:title" content="Faaiz Haque — Computer Engineer &amp; Founder, UK">
+<meta property="og:description" content="Five years of production support at Barclays. One game studio, founded solo. Actively looking — UK.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://faaizhaque.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230D0D0B'/%3E%3Ctext x='32' y='46' font-family='Arial Black,sans-serif' font-size='40' font-weight='900' fill='%23C9F73A' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Faaiz Haque",
+  "jobTitle": "Computer Engineer & Founder",
+  "url": "https://faaizhaque.github.io/",
+  "email": "mailto:faaizhaque@gmail.com",
+  "sameAs": [
+    "https://github.com/FaaizHaque",
+    "https://www.linkedin.com/in/faaiz-haque-202061145",
+    "https://haquegames.com/"
+  ],
+  "alumniOf": "Bilkent University",
+  "homeLocation": {"@type": "Country", "name": "United Kingdom"}
+}
+</script>
 <style>
   :root{
-    --paper:#F7F8F6;
-    --card:#FFFFFF;
-    --ink:#14181D;
-    --steel:#5A6472;
-    --line:#D8DDE2;
-    --signal:#0E5A8A;
-    --signal-deep:#0A415F;
-    --uptime:#1F7A4D;
-    --tile:#F2C43D;
-    --mono:'IBM Plex Mono',ui-monospace,monospace;
-    --body:'Public Sans',system-ui,sans-serif;
-    --display:'Bricolage Grotesque',var(--body);
-    --max:960px;
+    --bg:#0D0D0B;
+    --panel:#14140F;
+    --panel-2:#191913;
+    --ink:#F2F1E8;
+    --muted:#9C9B8D;
+    --line:#2B2B22;
+    --acid:#C9F73A;
+    --acid-deep:#A8D51F;
+    --barclays:#00AEEF;
+    --aws:#FF9900;
+    --gold:#F2C43D;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --body:'Space Grotesk',system-ui,sans-serif;
+    --display:'Syne',var(--body);
+    --max:1080px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-  a{color:var(--signal);text-decoration:none}
-  a:hover{text-decoration:underline}
-  :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:var(--body);font-size:16.5px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  /* film grain */
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--acid);color:#0D0D0B}
+  a{color:var(--ink);text-decoration:none}
+  :focus-visible{outline:2px solid var(--acid);outline-offset:3px}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
-  /* ---- status strip ---- */
-  .strip{border-bottom:1px solid var(--line);background:var(--card)}
-  .strip .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px;gap:16px;flex-wrap:wrap}
-  .status{font-family:var(--mono);font-size:12.5px;color:var(--steel);display:flex;align-items:center;gap:8px;letter-spacing:.02em}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--uptime);box-shadow:0 0 0 3px rgba(31,122,77,.15);flex:none}
+  /* ================= ticker ================= */
+  .ticker{background:var(--acid);color:#0D0D0B;overflow:hidden;border-bottom:2px solid #0D0D0B}
+  .ticker a{color:inherit;display:block}
+  .ticker a:focus-visible{outline:2px solid #0D0D0B;outline-offset:-4px}
+  .tick-track{display:flex;width:max-content;white-space:nowrap}
+  .tick-track span{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.08em;padding:9px 0;text-transform:uppercase}
   @media (prefers-reduced-motion: no-preference){
-    .dot{animation:pulse 2.4s ease-in-out infinite}
-    @keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(31,122,77,.15)}50%{box-shadow:0 0 0 6px rgba(31,122,77,.05)}}
+    .tick-track{animation:tick 26s linear infinite}
+    .ticker:hover .tick-track,.ticker:focus-within .tick-track{animation-play-state:paused}
+    @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   }
-  .strip nav{display:flex;gap:18px;font-family:var(--mono);font-size:12.5px}
-  .strip nav a{color:var(--ink)}
 
-  /* ---- hero ---- */
-  .hero{padding:88px 0 72px;border-bottom:1px solid var(--line)}
-  .kicker{font-family:var(--mono);font-size:13px;color:var(--steel);letter-spacing:.04em;margin-bottom:22px}
-  .kicker b{color:var(--ink);font-weight:500}
-  h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,7vw,68px);line-height:1.04;letter-spacing:-.02em;max-width:16ch}
-  h1 .own{color:var(--signal)}
-  .sub{margin-top:26px;font-size:18px;color:var(--steel);max-width:52ch}
-  .sub b{color:var(--ink);font-weight:600}
-  .cta{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13.5px;padding:12px 18px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);transition:border-color .15s,transform .15s}
-  .btn:hover{text-decoration:none;border-color:var(--signal);transform:translateY(-1px)}
-  .btn.primary{background:var(--signal);border-color:var(--signal);color:#fff}
-  .btn.primary:hover{background:var(--signal-deep)}
+  /* ================= nav ================= */
+  .nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(13,13,11,.88);backdrop-filter:blur(8px);z-index:50}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px;gap:16px}
+  .fh{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .fh b{color:var(--acid)}
+  .nav nav{display:flex;gap:20px;align-items:center;font-family:var(--mono);font-size:13px}
+  .nav nav a{color:var(--muted)}
+  .nav nav a:hover{color:var(--acid)}
+  .nav .hire{color:#0D0D0B;background:var(--acid);padding:8px 14px;font-weight:700;border:2px solid var(--acid)}
+  .nav .hire:hover{background:transparent;color:var(--acid)}
+  @media (max-width:640px){.nav nav a:not(.hire){display:none}}
 
-  /* ---- sections ---- */
-  section{padding:64px 0;border-bottom:1px solid var(--line)}
-  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);display:flex;align-items:center;gap:10px;margin-bottom:34px}
-  .eyebrow::after{content:"";height:1px;background:var(--line);flex:1}
+  /* ================= hero ================= */
+  .hero{padding:96px 0 72px;position:relative;border-bottom:1px solid var(--line)}
+  .kicker{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .kicker .flag{color:var(--ink)}
+  h1{
+    font-family:var(--display);font-weight:800;
+    font-size:clamp(44px,8.5vw,96px);line-height:.98;letter-spacing:-.03em;
+    text-transform:uppercase;max-width:14ch;
+  }
+  h1 .hollow{
+    color:transparent;-webkit-text-stroke:2px var(--acid);
+  }
+  .sub{margin-top:32px;font-size:19px;color:var(--muted);max-width:56ch}
+  .sub b{color:var(--ink);font-weight:700}
+  .sub a{color:var(--acid);border-bottom:1px solid var(--acid)}
+  .cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--mono);font-size:14px;font-weight:700;
+    padding:14px 20px;border:2px solid var(--ink);color:var(--ink);
+    transition:transform .12s,box-shadow .12s;text-transform:uppercase;letter-spacing:.03em;
+  }
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--acid)}
+  .btn.acid{background:var(--acid);border-color:var(--acid);color:#0D0D0B}
+  .btn.acid:hover{box-shadow:4px 4px 0 var(--ink)}
+  .btn svg{flex:none}
 
-  /* ---- timeline ---- */
-  .job{display:grid;grid-template-columns:190px 1fr;gap:8px 32px;padding:26px 0}
-  .job + .job{border-top:1px dashed var(--line)}
-  .when{font-family:var(--mono);font-size:13px;color:var(--steel);padding-top:4px}
-  .where{font-family:var(--mono);font-size:12px;color:var(--steel);margin-top:6px}
-  .job h3{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:-.01em}
-  .org{color:var(--steel);font-weight:500;font-size:15px;margin-top:2px}
-  .job p{margin-top:10px;color:#333A42;max-width:62ch}
-  .facts{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
-  .fact{font-family:var(--mono);font-size:12px;color:var(--signal-deep);background:rgba(14,90,138,.07);border:1px solid rgba(14,90,138,.18);padding:4px 9px;border-radius:4px}
+  /* open-to-work stamp */
+  .stamp{
+    position:absolute;right:24px;top:88px;width:150px;height:150px;
+    display:grid;place-items:center;pointer-events:none;
+  }
+  .stamp svg{position:absolute;inset:0;width:100%;height:100%}
+  @media (prefers-reduced-motion: no-preference){
+    .stamp svg{animation:spin 24s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+  }
+  .stamp svg text{fill:var(--acid);font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.24em}
+  .stamp .core{width:56px;height:56px;border:2px solid var(--acid);border-radius:50%;display:grid;place-items:center;color:var(--acid);font-family:var(--display);font-weight:800;font-size:18px;transform:rotate(-8deg)}
+  @media (max-width:900px){.stamp{display:none}}
 
-  /* ---- project ---- */
-  .proj{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:36px;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start}
-  .tiles{display:grid;grid-template-columns:repeat(2,56px);gap:8px}
-  .tile{width:56px;height:56px;border-radius:8px;background:var(--paper);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:24px;color:var(--ink);box-shadow:0 2px 0 var(--line)}
-  .tile.gold{background:var(--tile);border-color:#D9A81B;box-shadow:0 2px 0 #C9970D}
-  .proj h3{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.01em}
-  .proj .pub{font-family:var(--mono);font-size:12.5px;color:var(--steel);margin-top:4px}
-  .proj p{margin-top:14px;color:#333A42;max-width:60ch}
-  .stack{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
-  .chip{font-family:var(--mono);font-size:12px;color:var(--steel);border:1px solid var(--line);padding:4px 9px;border-radius:4px;background:var(--paper)}
-  .stores{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-  .dl{font-family:var(--mono);font-size:12.5px;color:var(--uptime);margin-top:14px}
+  /* ================= logo wall ================= */
+  .wall{border-bottom:1px solid var(--line);background:var(--panel)}
+  .wall .wrap{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-top:34px;padding-bottom:34px}
+  .wall .label{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;width:100%;margin-bottom:6px}
+  .logo{display:inline-flex;align-items:center;gap:12px;transition:transform .15s}
+  .logo:hover,.logo:focus-visible{transform:translateY(-2px)}
+  .logo .nm{font-family:var(--body);font-weight:700;font-size:23px;letter-spacing:-.01em}
 
-  /* ---- skills ---- */
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-  .skillcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px}
-  .skillcard h4{font-family:var(--mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal-deep);margin-bottom:14px}
+  .barclays-word{font-family:var(--body);font-weight:700;font-size:32px;letter-spacing:.01em;color:var(--barclays)}
+  .aws-mark{display:inline-flex;flex-direction:column;align-items:center;line-height:1}
+  .aws-mark .aws-t{font-family:var(--body);font-weight:700;font-size:30px;letter-spacing:-.02em;color:var(--ink)}
+  .aws-mark svg{margin-top:1px}
+
+  /* ================= sections ================= */
+  section{padding:84px 0;border-bottom:1px solid var(--line);position:relative}
+  .eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid);display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .eyebrow::before{content:"";width:34px;height:2px;background:var(--acid)}
+  h2{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.6vw,52px);letter-spacing:-.02em;text-transform:uppercase;margin-bottom:40px}
+  h2 .dim{color:var(--muted)}
+
+  /* ================= now / haque games ================= */
+  .studio{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
+  .studio-card{border:2px solid var(--ink);background:var(--panel);padding:32px;box-shadow:8px 8px 0 var(--acid)}
+  .studio-card .hg{font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:-.02em}
+  .studio-card .hg b{color:var(--acid)}
+  .studio-card .role{font-family:var(--mono);font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
+  .studio-card p{margin-top:16px;color:var(--muted)}
+  .studio-card p b{color:var(--ink)}
+  .studio-card .site{display:inline-flex;margin-top:18px;font-family:var(--mono);font-size:13.5px;font-weight:700;color:var(--acid);border-bottom:2px solid var(--acid);padding-bottom:2px}
+
+  .game h3{font-family:var(--display);font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:-.01em;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .flagship{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;color:#0D0D0B;background:var(--gold);padding:4px 9px;text-transform:uppercase}
+  .tiles{display:flex;gap:10px;margin:22px 0 2px}
+  .tile{width:58px;height:58px;border:2px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:26px;background:var(--panel-2);box-shadow:0 4px 0 var(--line)}
+  .tile.gold{background:var(--gold);color:#0D0D0B;border-color:var(--gold);box-shadow:0 4px 0 #B08A15}
+  .game p{margin-top:20px;color:var(--muted);max-width:58ch}
+  .game p b{color:var(--ink)}
+  .stats{display:flex;gap:36px;margin-top:26px;flex-wrap:wrap}
+  .stat .n{font-family:var(--display);font-weight:800;font-size:30px;color:var(--acid)}
+  .stat .l{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+  .chips{margin-top:24px;display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-family:var(--mono);font-size:12.5px;color:var(--muted);border:1px solid var(--line);padding:5px 10px;background:var(--panel)}
+  .stores{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+  .badge{
+    display:inline-flex;align-items:center;gap:11px;background:#000;border:1.5px solid #6b6b60;
+    padding:9px 18px 9px 14px;transition:border-color .15s,transform .12s;min-height:56px;
+  }
+  .badge:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .badge .bt{display:flex;flex-direction:column;line-height:1.16}
+  .badge .s{font-size:10.5px;color:#cfcec6;letter-spacing:.02em}
+  .badge .b{font-family:var(--body);font-weight:700;font-size:18px;color:#fff;letter-spacing:0}
+  @media (max-width:860px){.studio{grid-template-columns:1fr}}
+
+  /* ================= before / barclays ================= */
+  .bank-head{display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+  .bank-logo{font-family:var(--body);font-weight:700;font-size:clamp(30px,4.5vw,44px);color:var(--barclays);letter-spacing:.01em}
+  .bank-sub{font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .jobs{margin-top:36px}
+  .job{
+    display:grid;grid-template-columns:64px 200px 1fr;gap:12px 28px;padding:30px 0;
+    border-top:1px dashed var(--line);
+  }
+  .job:last-child{border-bottom:1px dashed var(--line)}
+  .idx{font-family:var(--display);font-weight:800;font-size:26px;color:transparent;-webkit-text-stroke:1.5px var(--muted)}
+  .when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:6px}
+  .where{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:6px}
+  .job h3{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.01em}
+  .org{font-family:var(--mono);font-size:13px;color:var(--barclays);margin-top:3px}
+  .job .org.aws-org{color:var(--aws)}
+  .job p{margin-top:12px;color:var(--muted);max-width:64ch}
+  .job p b{color:var(--ink)}
+  .facts{margin-top:14px;display:flex;flex-wrap:wrap;gap:9px}
+  .fact{font-family:var(--mono);font-size:12px;color:var(--acid);border:1px solid rgba(201,247,58,.35);padding:4px 10px;background:rgba(201,247,58,.06)}
+  @media (max-width:820px){.job{grid-template-columns:1fr}.idx{display:none}.when{padding-top:0}}
+
+  /* ================= skills ================= */
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:18px}
+  .skillcard{border:1px solid var(--line);background:var(--panel);padding:24px;transition:border-color .2s}
+  .skillcard:hover{border-color:var(--acid)}
+  .skillcard h4{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--acid);margin-bottom:16px}
   .skillcard ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-  .skillcard li{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line);background:var(--paper);padding:4px 9px;border-radius:4px;color:#333A42}
+  .skillcard li{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line);background:var(--bg);padding:4px 10px;color:var(--ink)}
 
-  /* ---- education ---- */
-  .edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .edu .skillcard p{color:#333A42}
-  .edu .skillcard .sm{font-family:var(--mono);font-size:12.5px;color:var(--steel);margin-top:6px}
+  /* ================= education ================= */
+  .edu{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .educard{border:1px solid var(--line);background:var(--panel);padding:28px;display:flex;gap:22px;align-items:center}
+  .educard .art{flex:none;width:76px;height:76px;display:grid;place-items:center}
+  .educard h3{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.01em}
+  .educard .sm{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:6px}
+  .educard .aws-mark .aws-t{font-size:30px}
+  @media (max-width:720px){.edu{grid-template-columns:1fr}}
 
-  /* ---- footer ---- */
-  footer{padding:54px 0 64px}
-  footer .big{font-family:var(--display);font-weight:600;font-size:clamp(24px,4vw,34px);letter-spacing:-.01em;max-width:24ch}
-  footer .cta{margin-top:24px}
-  .legal{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--steel)}
-  .legal a{color:var(--steel)}
-
-  /* ---- reveal ---- */
-  @media (prefers-reduced-motion: no-preference){
-    .r{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
-    .r.in{opacity:1;transform:none}
+  /* ================= footer ================= */
+  footer{padding:90px 0 60px}
+  .shout{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+  .mega{
+    display:block;font-family:var(--display);font-weight:800;
+    font-size:clamp(52px,11vw,132px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase;
+    color:var(--ink);width:fit-content;
   }
+  .mega .arrow{color:var(--acid)}
+  .mega:hover{color:transparent;-webkit-text-stroke:2px var(--acid)}
+  .mega:hover .arrow{color:var(--acid);-webkit-text-stroke:0}
+  .addr{margin-top:14px;font-family:var(--mono);font-size:14px;color:var(--muted)}
+  .addr a{color:var(--acid)}
+  .links{margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+  .link{
+    border:1px solid var(--line);padding:18px 20px;display:flex;align-items:center;gap:13px;
+    font-family:var(--mono);font-size:13.5px;font-weight:700;transition:border-color .15s,background .15s;
+  }
+  .link:hover{border-color:var(--acid);background:var(--panel)}
+  .link svg{flex:none}
+  .link .ext{margin-left:auto;color:var(--muted);font-weight:400}
+  .visa{margin-top:44px;border-left:3px solid var(--acid);padding:6px 0 6px 18px;color:var(--muted);max-width:62ch;font-size:15px}
+  .visa b{color:var(--ink)}
+  .legal{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .legal a{color:var(--muted)}
+  .legal a:hover{color:var(--acid)}
 
+  /* ================= reveal ================= */
+  @media (prefers-reduced-motion: no-preference){
+    .js .r{opacity:0;transform:translateY(12px);transition:opacity .55s ease,transform .55s ease}
+    .js .r.in{opacity:1;transform:none}
+  }
   @media (max-width:700px){
-    .hero{padding:56px 0 48px}
-    .job{grid-template-columns:1fr;gap:4px 0}
-    .when{padding-top:0}
-    .proj{grid-template-columns:1fr;padding:26px}
-    .tiles{grid-template-columns:repeat(4,52px)}
-    .tile{width:52px;height:52px;font-size:22px}
-    .edu{grid-template-columns:1fr}
+    .hero{padding:64px 0 52px}
+    section{padding:64px 0}
+    .tiles{flex-wrap:wrap}
   }
 </style>
 </head>
 <body>
 
-<div class="strip">
+<!-- ============ ticker ============ -->
+<div class="ticker">
+  <a href="#contact" aria-label="Actively looking for my next role in the UK — contact me">
+    <div class="tick-track" aria-hidden="true">
+      <span>&nbsp;★ ACTIVELY LOOKING FOR MY NEXT ROLE&nbsp;&nbsp;★ UK&nbsp;&nbsp;★ APPLICATION SUPPORT · SRE · CLOUD OPS&nbsp;&nbsp;★ AVAILABLE NOW&nbsp;&nbsp;★ SAY HELLO ↓&nbsp;&nbsp;</span><span>&nbsp;★ ACTIVELY LOOKING FOR MY NEXT ROLE&nbsp;&nbsp;★ UK&nbsp;&nbsp;★ APPLICATION SUPPORT · SRE · CLOUD OPS&nbsp;&nbsp;★ AVAILABLE NOW&nbsp;&nbsp;★ SAY HELLO ↓&nbsp;&nbsp;</span>
+    </div>
+  </a>
+</div>
+
+<!-- ============ nav ============ -->
+<div class="nav">
   <div class="wrap">
-    <div class="status"><span class="dot" aria-hidden="true"></span>open to senior application support roles &middot; London, UK</div>
+    <a class="fh" href="#top">FAAIZ<b>.</b></a>
     <nav>
-      <a href="#experience">experience</a>
-      <a href="#project">project</a>
+      <a href="#now">now</a>
+      <a href="#before">before</a>
       <a href="#skills">skills</a>
-      <a href="#contact">contact</a>
+      <a class="hire" href="mailto:faaizhaque@gmail.com">email me</a>
     </nav>
   </div>
 </div>
 
-<header class="hero">
+<!-- ============ hero ============ -->
+<header class="hero" id="top">
   <div class="wrap">
-    <p class="kicker"><b>FAAIZ HAQUE</b> &middot; Senior Application Support Analyst &middot; ex-Barclays</p>
-    <h1>I keep critical systems running. And I ship <span class="own">my own.</span></h1>
-    <p class="sub">Five years of production support for <b>Barclays Credit Risk</b> — P1/P2 incident command, AutoSys batch operations, Python and SQL automation. Then a year building a mobile game, designed and shipped <b>solo</b> to both app stores.</p>
+    <p class="kicker"><span class="flag">FAAIZ HAQUE</span> · COMPUTER ENGINEER · FOUNDER · 🇬🇧 UK</p>
+    <h1>I keep systems alive.<br><span class="hollow">Then I built my own.</span></h1>
+    <p class="sub">Five years commanding <b>P1 incidents on Barclays risk platforms</b> — then I quit, founded <a href="https://haquegames.com/" target="_blank" rel="noopener">Haque Games</a>, and shipped a word game to <b>both app stores, solo</b>. Now I want back on a team running production systems at scale — anywhere in the UK.</p>
     <div class="cta">
-      <a class="btn primary" href="Faaiz_Haque_CV.pdf" download>Download CV (PDF)</a>
-      <a class="btn" href="https://www.linkedin.com/in/faaiz-haque-202061145" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="mailto:faaizhaque@gmail.com">faaizhaque@gmail.com</a>
+      <a class="btn acid" href="mailto:faaizhaque@gmail.com">Email me →</a>
+      <!-- Restore once Faaiz_Haque_CV.pdf is committed to the repo root:
+      <a class="btn" href="Faaiz_Haque_CV.pdf" download>CV (PDF)</a> -->
+      <a class="btn" href="https://github.com/FaaizHaque" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        GitHub
+      </a>
     </div>
+  </div>
+  <div class="stamp" aria-hidden="true">
+    <svg viewBox="0 0 150 150">
+      <defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
+      <text><textPath href="#circ">OPEN TO WORK · UK · OPEN TO WORK ·</textPath></text>
+    </svg>
+    <div class="core">FH</div>
   </div>
 </header>
 
-<section id="experience">
+<!-- ============ logo wall ============ -->
+<div class="wall">
   <div class="wrap">
-    <p class="eyebrow">Experience</p>
-
-    <div class="job r">
-      <div><div class="when">Aug 2025 — Present</div><div class="where">iOS &amp; Android</div></div>
-      <div>
-        <h3>Independent Mobile Developer</h3>
-        <p class="org">Haque Games (self-published)</p>
-        <p>Designed, built and shipped a cross-platform word game end to end — gameplay, backend, store releases and monetisation — iterating on live user feedback through phased rollouts and A/B tests.</p>
-        <div class="facts"><span class="fact">2,000+ downloads</span><span class="fact">React Native</span><span class="fact">Supabase</span><span class="fact">solo build</span></div>
-      </div>
-    </div>
-
-    <div class="job r">
-      <div><div class="when">Jan 2023 — Aug 2025</div><div class="where">London &middot; hybrid</div></div>
-      <div>
-        <h3>Senior Application Support Analyst — Credit Risk</h3>
-        <p class="org">Barclays</p>
-        <p>Owned day-to-day support for 8 applications on the client risk rating platform: P1/P2 incidents commanded end to end, change and release coordination through ServiceNow, and faults traced through AutoSys, MySQL and Linux logs. Wrote the 150+ entry knowledge base users rated 95/100.</p>
-        <div class="facts"><span class="fact">3,000+ users</span><span class="fact">99% uptime</span><span class="fact">100+ issues cleared / quarter</span></div>
-      </div>
-    </div>
-
-    <div class="job r">
-      <div><div class="when">Oct 2021 — Jan 2023</div><div class="where">London &middot; hybrid</div></div>
-      <div>
-        <h3>Application Support Analyst — Post-Trade Risk (RWA)</h3>
-        <p class="org">Barclays &middot; Acting Team Lead</p>
-        <p>Stepped up to lead a team of 10 engineers for 15 months while the role sat vacant. Automated manual operations with Python, Bash and SQL, and led CutOver disaster recovery exercises across a multi-tool production estate.</p>
-        <div class="facts"><span class="fact">team of 10</span><span class="fact">~1 hr saved / engineer / day</span><span class="fact">99% change success</span></div>
-      </div>
-    </div>
-
-    <div class="job r">
-      <div><div class="when">Aug 2020 — Oct 2021</div><div class="where">Glasgow &middot; remote</div></div>
-      <div>
-        <h3>AWS Cloud Support Analyst</h3>
-        <p class="org">Barclays &middot; Graduate Programme</p>
-        <p>Supported an AWS ETL platform processing bank-wide risk and financial data — EC2, S3, Step Functions, CloudWatch — resolving 400+ production incidents through log analysis and cross-team troubleshooting.</p>
-        <div class="facts"><span class="fact">400+ incidents resolved</span><span class="fact">-30% monthly volume</span></div>
-      </div>
-    </div>
-
+    <p class="label">The receipts —</p>
+    <span class="logo" title="Barclays — 5 years"><span class="barclays-word">BARCLAYS</span></span>
+    <span class="logo" title="AWS Certified Cloud Practitioner">
+      <span class="aws-mark">
+        <span class="aws-t">aws</span>
+        <svg width="52" height="12" viewBox="0 0 52 12" aria-hidden="true"><path d="M2 2 C 14 11, 36 11, 48 3.5" stroke="#FF9900" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M50.5 1.5 L43.5 3.2 L48.3 7.4 Z" fill="#FF9900"/></svg>
+      </span>
+    </span>
+    <a class="logo" href="https://apps.apple.com/gb/app/name-place-animal-thing-npat/id6759828697" target="_blank" rel="noopener" title="NPAT on the App Store">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.03 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+      <span class="nm">App Store</span>
+    </a>
+    <a class="logo" href="https://play.google.com/store/apps/details?id=com.haquegames.napt" target="_blank" rel="noopener" title="NPAT on Google Play">
+      <svg width="24" height="26" viewBox="0 0 22 24" aria-hidden="true">
+        <path d="M0.8 0.6 L13 12 L0.8 23.4 C0.3 23.1 0 22.6 0 22 V2 C0 1.4 0.3 0.9 0.8 0.6 Z" fill="#00D7FE"/>
+        <path d="M0.8 0.6 C1.1 0.4 1.6 0.4 2 0.6 L16.9 8.4 L13 12 Z" fill="#00F076"/>
+        <path d="M0.8 23.4 C1.1 23.6 1.6 23.6 2 23.4 L16.9 15.6 L13 12 Z" fill="#FF3A44"/>
+        <path d="M13 12 L16.9 8.4 L20.9 10.5 C22.1 11.1 22.1 12.9 20.9 13.5 L16.9 15.6 Z" fill="#FFD500"/>
+      </svg>
+      <span class="nm">Google Play</span>
+    </a>
+    <a class="logo" href="https://github.com/FaaizHaque" target="_blank" rel="noopener" title="GitHub — FaaizHaque">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      <span class="nm">GitHub</span>
+    </a>
   </div>
-</section>
+</div>
 
-<section id="project">
+<!-- ============ now: haque games ============ -->
+<section id="now">
   <div class="wrap">
-    <p class="eyebrow">Project</p>
-    <div class="proj r">
-      <div class="tiles" aria-hidden="true">
-        <div class="tile">N</div><div class="tile">P</div><div class="tile gold">A</div><div class="tile">T</div>
+    <p class="eyebrow">Now · 2025 — present</p>
+    <h2>My startup<span class="dim">, not a side quest.</span></h2>
+    <div class="studio">
+      <div class="studio-card r">
+        <p class="hg">HAQUE <b>GAMES</b></p>
+        <p class="role">Founder · everything dept.</p>
+        <p>My independent game studio. One person, <b>every job title</b> — design, code, backend, store ops, marketing, monetisation. From nothing to live on both stores — and still shipping.</p>
+        <a class="site" href="https://haquegames.com/" target="_blank" rel="noopener">haquegames.com ↗</a>
       </div>
-      <div>
-        <h3>Name, Place, Animal, Thing</h3>
-        <p class="pub">published under Haque Games &middot; live on both stores</p>
-        <p>The classic childhood word game, revived. Race the clock to fill every category — solo, with friends, or in a daily challenge. Built alone from first sketch to store release: gameplay logic, a 100k-word curated database, backend, launch site, phased rollouts and ad monetisation.</p>
-        <div class="stack">
-          <span class="chip">React Native</span><span class="chip">Supabase</span><span class="chip">Railway</span><span class="chip">AdMob</span><span class="chip">AppLovin</span><span class="chip">Vungle</span><span class="chip">A/B testing</span>
+      <div class="game r">
+        <h3>Name, Place, Animal, Thing <span class="flagship">★ Flagship</span></h3>
+        <div class="tiles" aria-hidden="true">
+          <div class="tile">N</div><div class="tile">P</div><div class="tile gold">A</div><div class="tile">T</div>
+        </div>
+        <p>The classic childhood word game, revived and shipped to <b>both app stores</b>. Race the clock to fill every category — solo, with friends, or in a daily challenge. Gameplay, a <b>100k-word curated database</b>, backend, phased rollouts, A/B tests and ad monetisation: all one pair of hands.</p>
+        <div class="stats">
+          <div class="stat"><div class="n">2,000+</div><div class="l">downloads</div></div>
+          <div class="stat"><div class="n">2</div><div class="l">app stores</div></div>
+          <div class="stat"><div class="n">1</div><div class="l">developer</div></div>
+        </div>
+        <div class="chips">
+          <span class="chip">React Native</span><span class="chip">Supabase</span><span class="chip">Railway</span><span class="chip">AdMob</span><span class="chip">AppLovin</span><span class="chip">A/B testing</span>
         </div>
         <div class="stores">
-          <a class="btn" href="https://apps.apple.com/gb/app/name-place-animal-things-napt/id6759828697" target="_blank" rel="noopener">App Store ↗</a>
-          <a class="btn" href="https://play.google.com/store/apps/details?id=com.haquegames.napt" target="_blank" rel="noopener">Google Play ↗</a>
+          <a class="badge" href="https://apps.apple.com/gb/app/name-place-animal-thing-npat/id6759828697" target="_blank" rel="noopener" aria-label="Download NPAT on the App Store">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.03 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+            <span class="bt"><span class="s">Download on the</span><span class="b">App Store</span></span>
+          </a>
+          <a class="badge" href="https://play.google.com/store/apps/details?id=com.haquegames.napt" target="_blank" rel="noopener" aria-label="Get NPAT on Google Play">
+            <svg width="23" height="25" viewBox="0 0 22 24" aria-hidden="true">
+              <path d="M0.8 0.6 L13 12 L0.8 23.4 C0.3 23.1 0 22.6 0 22 V2 C0 1.4 0.3 0.9 0.8 0.6 Z" fill="#00D7FE"/>
+              <path d="M0.8 0.6 C1.1 0.4 1.6 0.4 2 0.6 L16.9 8.4 L13 12 Z" fill="#00F076"/>
+              <path d="M0.8 23.4 C1.1 23.6 1.6 23.6 2 23.4 L16.9 15.6 L13 12 Z" fill="#FF3A44"/>
+              <path d="M13 12 L16.9 8.4 L20.9 10.5 C22.1 11.1 22.1 12.9 20.9 13.5 L16.9 15.6 Z" fill="#FFD500"/>
+            </svg>
+            <span class="bt"><span class="s">GET IT ON</span><span class="b">Google Play</span></span>
+          </a>
         </div>
-        <p class="dl">▲ 2,000+ downloads and counting</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ before: barclays ============ -->
+<section id="before">
+  <div class="wrap">
+    <p class="eyebrow">Before · 2020 — 2025</p>
+    <h2>Five years at <span class="dim">the bank.</span></h2>
+    <div class="bank-head">
+      <span class="bank-logo">BARCLAYS</span>
+      <span class="bank-sub">Credit Risk · Post-Trade · Cloud — production, always production.</span>
+    </div>
+
+    <div class="jobs">
+      <div class="job r">
+        <div class="idx">03</div>
+        <div><div class="when">Jan 2023 — Aug 2025</div><div class="where">London · hybrid</div></div>
+        <div>
+          <h3>Senior Application Support Analyst — Credit Risk</h3>
+          <p class="org">BARCLAYS</p>
+          <p>Owned day-to-day support for <b>8 applications</b> on the client risk rating platform: P1/P2 incidents commanded end to end, change and release through ServiceNow, faults traced through AutoSys, MySQL and Linux logs. Wrote the <b>150+ entry knowledge base</b> users rated 95/100.</p>
+          <div class="facts"><span class="fact">3,000+ users</span><span class="fact">99% uptime</span><span class="fact">100+ issues cleared / quarter</span></div>
+        </div>
+      </div>
+
+      <div class="job r">
+        <div class="idx">02</div>
+        <div><div class="when">Oct 2021 — Jan 2023</div><div class="where">London · hybrid</div></div>
+        <div>
+          <h3>Application Support Analyst — Post-Trade Risk (RWA)</h3>
+          <p class="org">BARCLAYS · ACTING TEAM LEAD</p>
+          <p>The team lead role sat vacant, so I stepped up and <b>led 10 engineers for 15 months</b>. Automated manual operations with Python, Bash and SQL, and ran CutOver disaster recovery exercises across a multi-tool production estate.</p>
+          <div class="facts"><span class="fact">team of 10</span><span class="fact">~1 hr saved / engineer / day</span><span class="fact">99% change success</span></div>
+        </div>
+      </div>
+
+      <div class="job r">
+        <div class="idx">01</div>
+        <div><div class="when">Aug 2020 — Oct 2021</div><div class="where">Glasgow · remote</div></div>
+        <div>
+          <h3>AWS Cloud Support Analyst</h3>
+          <p class="org aws-org">BARCLAYS · GRADUATE PROGRAMME · AWS</p>
+          <p>Supported an AWS ETL platform processing <b>bank-wide risk and financial data</b> — EC2, S3, Step Functions, CloudWatch — resolving 400+ production incidents through log analysis and cross-team troubleshooting.</p>
+          <div class="facts"><span class="fact">400+ incidents resolved</span><span class="fact">-30% monthly volume</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ skills ============ -->
 <section id="skills">
   <div class="wrap">
-    <p class="eyebrow">Skills</p>
+    <p class="eyebrow">Arsenal</p>
+    <h2>What I run <span class="dim">in production.</span></h2>
     <div class="skills">
       <div class="skillcard r">
         <h4>Support &amp; process</h4>
-        <ul><li>Production Support</li><li>Major Incidents (P1/P2)</li><li>ITIL</li><li>Change &amp; Release</li><li>SLA Management</li><li>Root Cause Analysis</li><li>Disaster Recovery</li><li>Knowledge Bases</li></ul>
+        <ul><li>Major Incidents (P1/P2)</li><li>Production Support</li><li>ITIL</li><li>Change &amp; Release</li><li>SLA Management</li><li>Root Cause Analysis</li><li>Disaster Recovery</li><li>Knowledge Bases</li></ul>
       </div>
       <div class="skillcard r">
         <h4>Scripting &amp; data</h4>
@@ -239,45 +451,97 @@
       </div>
       <div class="skillcard r">
         <h4>Platforms</h4>
-        <ul><li>Linux</li><li>Windows</li><li>AWS — EC2, S3, CloudWatch, IAM, Step Functions</li></ul>
+        <ul><li>AWS — EC2, S3, CloudWatch, IAM, Step Functions</li><li>Linux</li><li>Windows</li><li>React Native</li><li>Supabase</li></ul>
       </div>
       <div class="skillcard r">
         <h4>Tools</h4>
-        <ul><li>AutoSys (JIL)</li><li>ServiceNow</li><li>xMatters</li><li>Jira</li><li>Confluence</li><li>Bitbucket</li><li>Git</li></ul>
+        <ul><li>AutoSys (JIL)</li><li>ServiceNow</li><li>xMatters</li><li>Jira</li><li>Confluence</li><li>Git</li></ul>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ education ============ -->
 <section id="education">
   <div class="wrap">
-    <p class="eyebrow">Education &amp; certification</p>
+    <p class="eyebrow">Paper trail</p>
+    <h2>Degree &amp; <span class="dim">certification.</span></h2>
     <div class="edu">
-      <div class="skillcard r">
-        <h4>Degree</h4>
-        <p>BSc Computer Engineering, First Class</p>
-        <p class="sm">Bilkent University, Ankara &middot; 2015 – 2019</p>
+      <div class="educard r">
+        <div class="art" aria-hidden="true">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <rect x="14" y="14" width="36" height="36" rx="4" stroke="var(--acid)" stroke-width="2.5"/>
+            <rect x="24" y="24" width="16" height="16" rx="2" fill="var(--acid)"/>
+            <g stroke="var(--acid)" stroke-width="2.5" stroke-linecap="round">
+              <path d="M22 14V6M32 14V6M42 14V6M22 58v-8M32 58v-8M42 58v-8M14 22H6M14 32H6M14 42H6M58 22h-8M58 32h-8M58 42h-8"/>
+            </g>
+          </svg>
+        </div>
+        <div>
+          <h3>BSc Computer Engineering — First Class</h3>
+          <p class="sm">Bilkent University · 2015 – 2019</p>
+        </div>
       </div>
-      <div class="skillcard r">
-        <h4>Certification</h4>
-        <p>AWS Certified Cloud Practitioner</p>
-        <p class="sm">Amazon Web Services</p>
+      <div class="educard r">
+        <div class="art" aria-hidden="true">
+          <span class="aws-mark">
+            <span class="aws-t">aws</span>
+            <svg width="56" height="13" viewBox="0 0 52 12"><path d="M2 2 C 14 11, 36 11, 48 3.5" stroke="#FF9900" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M50.5 1.5 L43.5 3.2 L48.3 7.4 Z" fill="#FF9900"/></svg>
+          </span>
+        </div>
+        <div>
+          <h3>AWS Certified Cloud Practitioner</h3>
+          <p class="sm">Amazon Web Services</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ footer ============ -->
 <footer id="contact">
   <div class="wrap">
-    <p class="big">Recruiting for application or production support in London? Let's talk.</p>
-    <div class="cta">
-      <a class="btn primary" href="mailto:faaizhaque@gmail.com">Email Faaiz</a>
-      <a class="btn" href="https://www.linkedin.com/in/faaiz-haque-202061145" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="Faaiz_Haque_CV.pdf" download>Download CV</a>
+    <p class="shout">Recruiting in the UK? Skip the funnel —</p>
+    <a class="mega" href="mailto:faaizhaque@gmail.com">Email me <span class="arrow">→</span></a>
+    <p class="addr"><a href="mailto:faaizhaque@gmail.com">faaizhaque@gmail.com</a> · goes straight to me.</p>
+
+    <div class="links">
+      <a class="link" href="https://github.com/FaaizHaque" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        GitHub <span class="ext">↗</span>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/faaiz-haque-202061145" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+        LinkedIn <span class="ext">↗</span>
+      </a>
+      <a class="link" href="https://apps.apple.com/gb/app/name-place-animal-thing-npat/id6759828697" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.03 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+        App Store <span class="ext">↗</span>
+      </a>
+      <a class="link" href="https://play.google.com/store/apps/details?id=com.haquegames.napt" target="_blank" rel="noopener">
+        <svg width="18" height="20" viewBox="0 0 22 24" aria-hidden="true">
+          <path d="M0.8 0.6 L13 12 L0.8 23.4 C0.3 23.1 0 22.6 0 22 V2 C0 1.4 0.3 0.9 0.8 0.6 Z" fill="#00D7FE"/>
+          <path d="M0.8 0.6 C1.1 0.4 1.6 0.4 2 0.6 L16.9 8.4 L13 12 Z" fill="#00F076"/>
+          <path d="M0.8 23.4 C1.1 23.6 1.6 23.6 2 23.4 L16.9 15.6 L13 12 Z" fill="#FF3A44"/>
+          <path d="M13 12 L16.9 8.4 L20.9 10.5 C22.1 11.1 22.1 12.9 20.9 13.5 L16.9 15.6 Z" fill="#FFD500"/>
+        </svg>
+        Google Play <span class="ext">↗</span>
+      </a>
+      <a class="link" href="https://haquegames.com/" target="_blank" rel="noopener">
+        <span style="font-family:var(--display);font-weight:800;font-size:17px" aria-hidden="true">HG</span>
+        haquegames.com <span class="ext">↗</span>
+      </a>
+      <!-- Restore once Faaiz_Haque_CV.pdf is committed to the repo root:
+      <a class="link" href="Faaiz_Haque_CV.pdf" download>
+        <span aria-hidden="true">⤓</span> CV (PDF)
+      </a> -->
     </div>
+
+    <p class="visa"><b>One practical note:</b> I'll need Skilled Worker sponsorship for UK roles. If your company holds a licence, the rest is straightforward.</p>
+
     <div class="legal">
-      <span>© 2026 Faaiz Haque &middot; Haque Games</span>
-      <span><a href="support.html">App support</a> &nbsp;&middot;&nbsp; <a href="privacy-policy.html">Privacy policy</a></span>
+      <span>© 2026 Faaiz Haque · Haque Games</span>
+      <span><a href="support.html">App support</a> &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy policy</a></span>
     </div>
   </div>
 </footer>
