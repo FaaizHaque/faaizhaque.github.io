@@ -48,15 +48,13 @@
     --sun-soft:#FFF7DB;
     --sun-line:#F1DD98;
     --orange-soft:#FFF1E3;
-    --lilac-soft:#F1EEFF;
-    --mint-soft:#E5F6F1;
     --barclays:#00AEEF;
     --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
     --sans:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
     --max:1040px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:64px}
   body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
   a{color:var(--blue)}
   a:hover{color:var(--blue-dark)}
@@ -89,7 +87,6 @@
   /* ---------- hero ---------- */
   .hero{padding:84px 0 72px}
   .hello{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
-  .avatar{width:56px;height:56px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:21px;flex:none}
   .status{display:inline-flex;align-items:center;gap:9px;background:var(--green-soft);color:var(--green);font-weight:600;font-size:15px;padding:8px 14px;border-radius:999px}
   .status .dot{width:9px;height:9px;border-radius:50%;background:var(--green-dot);flex:none}
   h1{font-size:clamp(40px,6vw,58px)}
@@ -97,16 +94,17 @@
   .lead + .lead{margin-top:14px}
   .lead strong{color:var(--ink);font-weight:600}
   .cta{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+  @media (max-width:480px){.cta .btn.primary{flex:1 0 100%;justify-content:center}.cta .btn:not(.primary){flex:1;justify-content:center}}
 
   /* ---------- logo strip ---------- */
   .strip{padding:40px 0;background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .logos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
   .logo-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:14px;text-decoration:none;color:var(--text)}
   a.logo-card:hover{border-color:#C9D2DE;color:var(--text)}
-  .logo-card .mark{height:44px;display:flex;align-items:center;gap:10px}
+  .logo-card .mark{height:56px;display:flex;align-items:center;gap:10px}
   .logo-card p{font-size:15px;line-height:1.45;color:var(--muted)}
   .logo-card p strong{display:block;color:var(--ink);font-weight:600;font-size:16px;margin-bottom:2px}
-  .barclays{display:inline-flex;align-items:center;gap:8px;color:var(--barclays);font-family:var(--sans);font-weight:600;letter-spacing:.07em;font-size:22px;line-height:1}
+  .barclays{display:inline-flex;align-items:center;gap:8px;color:var(--barclays);font-family:var(--sans);font-weight:600;letter-spacing:.07em;font-size:23px;line-height:1}
   .barclays svg{fill:var(--barclays)}
   @media (max-width:900px){.logos{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:480px){.logos{grid-template-columns:1fr}}
@@ -127,7 +125,7 @@
   .badge .bt{display:flex;flex-direction:column;line-height:1.15}
   .badge .s{font-size:11px;letter-spacing:.01em}
   .badge .b{font-size:18px;font-weight:600}
-  .site{font-weight:600;margin-left:6px}
+  .site{font-weight:600}
   @media (max-width:720px){.studio{grid-template-columns:1fr;padding:26px;gap:22px}.appicon{width:80px;height:80px;border-radius:18px;padding:10px}.appicon span{font-size:15px}}
 
   /* ---------- experience ---------- */
@@ -145,18 +143,12 @@
   @media (max-width:760px){.role{grid-template-columns:1fr;gap:4px}}
 
   /* ---------- why ---------- */
-  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .why-card{border-radius:16px;padding:26px}
-  .why-card.wide{grid-column:span 2}
-  .why-card h3{margin-bottom:8px}
-  .why-card p strong{color:var(--ink);font-weight:600}
-  .tint-blue{background:var(--blue-soft)}
-  .tint-green{background:var(--mint-soft)}
-  .tint-orange{background:var(--orange-soft)}
-  .tint-lilac{background:var(--lilac-soft)}
-  .tint-sun{background:var(--sun-soft)}
-  @media (max-width:860px){.why{grid-template-columns:1fr 1fr}}
-  @media (max-width:600px){.why{grid-template-columns:1fr}.why-card.wide{grid-column:auto}}
+  .why{background:var(--blue-soft);border-radius:16px;padding:28px 32px 28px 52px;max-width:820px}
+  .why li{margin-top:14px}
+  .why li:first-child{margin-top:0}
+  .why li::marker{color:var(--blue)}
+  .why li strong{color:var(--ink);font-weight:600}
+  @media (max-width:600px){.why{padding:22px 20px 22px 40px}}
 
   /* ---------- skills ---------- */
   .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
@@ -195,6 +187,8 @@
     section,.contact{padding:56px 0}
     .hero{padding:52px 0 48px}
     .lead{font-size:18px}
+    .status{border-radius:14px;align-items:flex-start;padding:8px 12px;text-wrap:balance}
+    .status .dot{margin-top:7px}
   }
 </style>
 </head>
@@ -219,7 +213,6 @@
 <div class="hero">
   <div class="wrap">
     <div class="hello">
-      <div class="avatar" aria-hidden="true">FH</div>
       <p class="status"><span class="dot" aria-hidden="true"></span>Open to work: application support roles in the UK</p>
     </div>
     <h1>Hi, I'm Faaiz.</h1>
@@ -251,7 +244,7 @@
       <a class="logo-card" href="#experience">
         <div class="mark">
           <span class="barclays">
-            <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.043 3.629a3.235 3.235 0 0 0-1.048-.54 3.076 3.076 0 0 0-.937-.144h-.046c-.413.006-1.184.105-1.701.71a1.138 1.138 0 0 0-.226 1.023.9.9 0 0 0 .555.63s.088.032.228.058c-.04.078-.136.214-.136.214-.179.265-.576.612-1.668.612h-.063c-.578-.038-1.056-.189-1.616-.915-.347-.45-.523-1.207-.549-2.452-.022-.624-.107-1.165-.256-1.6-.1-.29-.333-.596-.557-.742a2.55 2.55 0 0 0-.694-.336c-.373-.12-.848-.14-1.204-.146-.462-.01-.717.096-.878.292-.027.033-.032.05-.068.046-.084-.006-.272-.006-.328-.006-.264 0-.498.043-.721.09-.47.1-.761.295-1.019.503-.12.095-.347.365-.399.653a.76.76 0 0 0 .097.578c.14-.148.374-.264.816-.266.493-.002 1.169.224 1.406.608.336.547.27.99.199 1.517-.183 1.347-.68 2.048-1.783 2.203-.191.026-.38.04-.56.04-.776 0-1.34-.248-1.63-.716a.71.71 0 0 1-.088-.168s.087-.021.163-.056c.294-.14.514-.344.594-.661.09-.353.004-.728-.23-1.007-.415-.47-.991-.708-1.713-.708-.4 0-.755.076-.982.14-.908.256-1.633.947-2.214 2.112-.412.824-.7 1.912-.81 3.067-.11 1.13-.056 2.085.019 2.949.124 1.437.363 2.298.708 3.22a15.68 15.68 0 0 0 1.609 3.19c.09-.094.15-.161.308-.318.188-.19.724-.893.876-1.11.19-.27.51-.779.664-1.147l.15.119c.16.127.252.348.249.592-.003.215-.053.464-.184.922a8.703 8.703 0 0 1-.784 1.818c-.189.341-.27.508-.199.584.015.015.038.03.06.026.116 0 .34-.117.585-.304.222-.17.813-.672 1.527-1.675a15.449 15.449 0 0 0 1.452-2.521c.12.046.255.101.317.226a.92.92 0 0 1 .08.563c-.065.539-.379 1.353-.63 1.94-.425.998-1.208 2.115-1.788 2.877-.022.03-.163.197-.186.227.9.792 1.944 1.555 3.007 2.136.725.408 2.203 1.162 3.183 1.424.98-.262 2.458-1.016 3.184-1.424a17.063 17.063 0 0 0 3.003-2.134c-.05-.076-.13-.158-.183-.23-.582-.763-1.365-1.881-1.790-2.875-.25-.59-.563-1.405-.628-1.94-.028-.221-.002-.417.08-.565.033-.098.274-.218.317-.226.405.884.887 1.73 1.452 2.522.715 1.003 1.306 1.506 1.527 1.674.248.191.467.304.586.304a.07.07 0 0 0 .044-.012c.094-.069.017-.234-.183-.594a9.003 9.003 0 0 1-.786-1.822c-.13-.456-.18-.706-.182-.92-.004-.246.088-.466.248-.594l.15-.118c.155.373.5.919.665 1.147.15.216.685.919.876 1.11.156.158.22.222.308.32a15.672 15.672 0 0 0 1.609-3.19c.343-.923.583-1.784.707-3.222.075-.86.128-1.81.02-2.948-.101-1.116-.404-2.264-.81-3.068-.249-.49-.605-1.112-1.171-1.566z"/></svg>
+            <svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.043 3.629a3.235 3.235 0 0 0-1.048-.54 3.076 3.076 0 0 0-.937-.144h-.046c-.413.006-1.184.105-1.701.71a1.138 1.138 0 0 0-.226 1.023.9.9 0 0 0 .555.63s.088.032.228.058c-.04.078-.136.214-.136.214-.179.265-.576.612-1.668.612h-.063c-.578-.038-1.056-.189-1.616-.915-.347-.45-.523-1.207-.549-2.452-.022-.624-.107-1.165-.256-1.6-.1-.29-.333-.596-.557-.742a2.55 2.55 0 0 0-.694-.336c-.373-.12-.848-.14-1.204-.146-.462-.01-.717.096-.878.292-.027.033-.032.05-.068.046-.084-.006-.272-.006-.328-.006-.264 0-.498.043-.721.09-.47.1-.761.295-1.019.503-.12.095-.347.365-.399.653a.76.76 0 0 0 .097.578c.14-.148.374-.264.816-.266.493-.002 1.169.224 1.406.608.336.547.27.99.199 1.517-.183 1.347-.68 2.048-1.783 2.203-.191.026-.38.04-.56.04-.776 0-1.34-.248-1.63-.716a.71.71 0 0 1-.088-.168s.087-.021.163-.056c.294-.14.514-.344.594-.661.09-.353.004-.728-.23-1.007-.415-.47-.991-.708-1.713-.708-.4 0-.755.076-.982.14-.908.256-1.633.947-2.214 2.112-.412.824-.7 1.912-.81 3.067-.11 1.13-.056 2.085.019 2.949.124 1.437.363 2.298.708 3.22a15.68 15.68 0 0 0 1.609 3.19c.09-.094.15-.161.308-.318.188-.19.724-.893.876-1.11.19-.27.51-.779.664-1.147l.15.119c.16.127.252.348.249.592-.003.215-.053.464-.184.922a8.703 8.703 0 0 1-.784 1.818c-.189.341-.27.508-.199.584.015.015.038.03.06.026.116 0 .34-.117.585-.304.222-.17.813-.672 1.527-1.675a15.449 15.449 0 0 0 1.452-2.521c.12.046.255.101.317.226a.92.92 0 0 1 .08.563c-.065.539-.379 1.353-.63 1.94-.425.998-1.208 2.115-1.788 2.877-.022.03-.163.197-.186.227.9.792 1.944 1.555 3.007 2.136.725.408 2.203 1.162 3.183 1.424.98-.262 2.458-1.016 3.184-1.424a17.063 17.063 0 0 0 3.003-2.134c-.05-.076-.13-.158-.183-.23-.582-.763-1.365-1.881-1.790-2.875-.25-.59-.563-1.405-.628-1.94-.028-.221-.002-.417.08-.565.033-.098.274-.218.317-.226.405.884.887 1.73 1.452 2.522.715 1.003 1.306 1.506 1.527 1.674.248.191.467.304.586.304a.07.07 0 0 0 .044-.012c.094-.069.017-.234-.183-.594a9.003 9.003 0 0 1-.786-1.822c-.13-.456-.18-.706-.182-.92-.004-.246.088-.466.248-.594l.15-.118c.155.373.5.919.665 1.147.15.216.685.919.876 1.11.156.158.22.222.308.32a15.672 15.672 0 0 0 1.609-3.19c.343-.923.583-1.784.707-3.222.075-.86.128-1.81.02-2.948-.101-1.116-.404-2.264-.81-3.068-.249-.49-.605-1.112-1.171-1.566z"/></svg>
             BARCLAYS
           </span>
         </div>
@@ -259,20 +252,20 @@
       </a>
       <a class="logo-card" href="#now">
         <div class="mark">
-          <svg width="40" height="40" viewBox="0 0 24 24" aria-label="App Store" role="img"><rect width="24" height="24" rx="5.4" fill="#0D96F6"/><g transform="translate(4.6 4.6) scale(.617)"><path fill="#fff" d="M8.8086 14.9194l6.1107-11.0368c.0837-.1513.1682-.302.2437-.4584.0685-.142.1267-.2854.1646-.4403.0803-.3259.0588-.6656-.066-.9767-.1238-.3095-.3417-.5678-.6201-.7355a1.4175 1.4175 0 0 0-.921-.1924c-.3207.043-.6135.1935-.8443.4288-.1094.1118-.1996.2361-.2832.369-.092.1463-.175.2979-.259.4492l-.3864.6979-.3865-.6979c-.0837-.1515-.1667-.303-.2587-.4492-.0837-.1329-.1739-.2572-.2835-.369-.2305-.2353-.5233-.3857-.844-.429a1.4181 1.4181 0 0 0-.921.1926c-.2784.1677-.4964.426-.6203.7355-.1246.311-.1461.6508-.066.9767.038.155.0962.2984.1648.4403.0753.1564.1598.307.2437.4584l1.248 2.2543-4.8625 8.7825H2.0295c-.1676 0-.3351-.0007-.5026.0092-.1522.009-.3004.0284-.448.0714-.3108.0906-.5822.2798-.7783.548-.195.2665-.3006.5929-.3006.9279 0 .3352.1057.6612.3006.9277.196.2683.4675.4575.7782.548.1477.043.296.0623.4481.0715.1675.01.335.009.5026.009h13.0974c.0171-.0357.059-.1294.1-.2697.415-1.4151-.6156-2.843-2.0347-2.843zM3.113 18.5418l-.7922 1.5008c-.0818.1553-.1644.31-.2384.4705-.067.1458-.124.293-.1611.452-.0785.3346-.0576.6834.0645 1.0029.1212.3175.3346.583.607.7549.2727.172.5891.2416.9013.1975.3139-.044.6005-.1986.8263-.4402.1072-.1148.1954-.2424.2772-.3787.0902-.1503.1714-.3059.2535-.4612L6 19.4636c-.0896-.149-.9473-1.4704-2.887-.9218m20.5861-3.0056a1.4707 1.4707 0 0 0-.779-.5407c-.1476-.0425-.2961-.0616-.4483-.0705-.1678-.0099-.3352-.0091-.503-.0091H18.648l-4.3891-7.817c-.6655.7005-.9632 1.485-1.0773 2.1976-.1655 1.0333.0367 2.0934.546 3.0004l5.2741 9.3933c.084.1494.167.299.2591.4435.0837.131.1739.2537.2836.364.231.2323.5238.3809.8449.4232.3192.0424.643-.0244.9217-.1899.2784-.1653.4968-.4204.621-.7257.1246-.3072.146-.6425.0658-.9641-.0381-.1529-.0962-.2945-.165-.4346-.0753-.1543-.1598-.303-.2438-.4524l-1.216-2.1662h1.596c.1677 0 .3351.0009.5029-.009.1522-.009.3007-.028.4483-.0705a1.4707 1.4707 0 0 0 .779-.5407A1.5386 1.5386 0 0 0 24 16.452a1.539 1.539 0 0 0-.3009-.9158Z"/></g></svg>
-          <svg width="36" height="36" viewBox="0 0 24 24" aria-label="Google Play" role="img"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg>
+          <svg width="52" height="52" viewBox="0 0 24 24" aria-label="App Store" role="img"><rect width="24" height="24" rx="5.4" fill="#0D96F6"/><g transform="translate(4.6 4.6) scale(.617)"><path fill="#fff" d="M8.8086 14.9194l6.1107-11.0368c.0837-.1513.1682-.302.2437-.4584.0685-.142.1267-.2854.1646-.4403.0803-.3259.0588-.6656-.066-.9767-.1238-.3095-.3417-.5678-.6201-.7355a1.4175 1.4175 0 0 0-.921-.1924c-.3207.043-.6135.1935-.8443.4288-.1094.1118-.1996.2361-.2832.369-.092.1463-.175.2979-.259.4492l-.3864.6979-.3865-.6979c-.0837-.1515-.1667-.303-.2587-.4492-.0837-.1329-.1739-.2572-.2835-.369-.2305-.2353-.5233-.3857-.844-.429a1.4181 1.4181 0 0 0-.921.1926c-.2784.1677-.4964.426-.6203.7355-.1246.311-.1461.6508-.066.9767.038.155.0962.2984.1648.4403.0753.1564.1598.307.2437.4584l1.248 2.2543-4.8625 8.7825H2.0295c-.1676 0-.3351-.0007-.5026.0092-.1522.009-.3004.0284-.448.0714-.3108.0906-.5822.2798-.7783.548-.195.2665-.3006.5929-.3006.9279 0 .3352.1057.6612.3006.9277.196.2683.4675.4575.7782.548.1477.043.296.0623.4481.0715.1675.01.335.009.5026.009h13.0974c.0171-.0357.059-.1294.1-.2697.415-1.4151-.6156-2.843-2.0347-2.843zM3.113 18.5418l-.7922 1.5008c-.0818.1553-.1644.31-.2384.4705-.067.1458-.124.293-.1611.452-.0785.3346-.0576.6834.0645 1.0029.1212.3175.3346.583.607.7549.2727.172.5891.2416.9013.1975.3139-.044.6005-.1986.8263-.4402.1072-.1148.1954-.2424.2772-.3787.0902-.1503.1714-.3059.2535-.4612L6 19.4636c-.0896-.149-.9473-1.4704-2.887-.9218m20.5861-3.0056a1.4707 1.4707 0 0 0-.779-.5407c-.1476-.0425-.2961-.0616-.4483-.0705-.1678-.0099-.3352-.0091-.503-.0091H18.648l-4.3891-7.817c-.6655.7005-.9632 1.485-1.0773 2.1976-.1655 1.0333.0367 2.0934.546 3.0004l5.2741 9.3933c.084.1494.167.299.2591.4435.0837.131.1739.2537.2836.364.231.2323.5238.3809.8449.4232.3192.0424.643-.0244.9217-.1899.2784-.1653.4968-.4204.621-.7257.1246-.3072.146-.6425.0658-.9641-.0381-.1529-.0962-.2945-.165-.4346-.0753-.1543-.1598-.303-.2438-.4524l-1.216-2.1662h1.596c.1677 0 .3351.0009.5029-.009.1522-.009.3007-.028.4483-.0705a1.4707 1.4707 0 0 0 .779-.5407A1.5386 1.5386 0 0 0 24 16.452a1.539 1.539 0 0 0-.3009-.9158Z"/></g></svg>
+          <svg width="46" height="46" viewBox="0 0 24 24" aria-label="Google Play" role="img"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg>
         </div>
-        <p><strong>NPAT, my own game</strong>Live on the App Store and Google Play</p>
+        <p><strong>NPAT, my mobile game</strong>Live on the App Store and Google Play</p>
       </a>
       <a class="logo-card" href="#education">
         <div class="mark">
-          <svg width="66" height="40" viewBox="0 4.6 24 14.8" aria-label="AWS" role="img"><path fill="#232F3E" d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.020 6.020 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.520.520 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.230 5.140c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.830-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.710 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167z"/><path fill="#FF9900" d="M21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.570.695-2.994z"/></svg>
+          <svg width="84" height="52" viewBox="0 4.6 24 14.8" aria-label="AWS" role="img"><path fill="#232F3E" d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.020 6.020 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.520.520 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.230 5.140c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.830-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.710 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167z"/><path fill="#FF9900" d="M21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.570.695-2.994z"/></svg>
         </div>
         <p><strong>AWS certified</strong>Cloud Practitioner</p>
       </a>
       <a class="logo-card" href="#education">
         <div class="mark">
-          <svg width="40" height="40" viewBox="0 0 64 64" fill="none" aria-label="Computer engineering" role="img">
+          <svg width="52" height="52" viewBox="0 0 64 64" fill="none" aria-label="Computer engineering" role="img">
             <rect x="14" y="14" width="36" height="36" rx="5" stroke="#1E5BD8" stroke-width="3.5"/>
             <rect x="24" y="24" width="16" height="16" rx="2.5" fill="#1E5BD8"/>
             <g stroke="#1E5BD8" stroke-width="3.5" stroke-linecap="round"><path d="M23 14V6M32 14V6M41 14V6M23 58v-8M32 58v-8M41 58v-8M14 23H6M14 32H6M14 41H6M58 23h-8M58 32h-8M58 41h-8"/></g>
@@ -288,18 +281,18 @@
 <section id="now">
   <div class="wrap">
     <h2>What I'm working on now</h2>
-    <p class="intro">Since leaving Barclays in 2025, I've been running my own company.</p>
+    <p class="intro">Since leaving Barclays in 2025, I've been running Haque Games.</p>
     <div class="studio">
       <div class="appicon" aria-hidden="true"><span>N</span><span>P</span><span class="gold">A</span><span>T</span></div>
       <div>
         <p class="meta">Haque Games · Founder · 2025 to present</p>
         <h3>Name, Place, Animal, Thing (NPAT)</h3>
-        <p>I set up <a href="https://haquegames.com/" target="_blank" rel="noopener">Haque Games</a> as my own independent studio, and NPAT is its first game. It's a modern version of the classic word game: you race the clock to fill in every category, on your own, against friends, or in a daily challenge.</p>
-        <p>I built the whole thing myself, from the game design and the app to the backend, a curated database of <strong>100,000 words</strong>, store releases, A/B testing, marketing and ad monetisation. It's live on both app stores with <strong>over 2,000 downloads</strong>.</p>
+        <p>NPAT is the first game from <a href="https://haquegames.com/" target="_blank" rel="noopener">Haque Games</a>. It's the classic word game, made for phones. You can play solo, against friends, or in a daily challenge.</p>
+        <p>I did all of it myself: the game design, the app and the backend, a database of <strong>100,000 words</strong>, the store releases, A/B testing, marketing and ad monetisation. It's live on both app stores with <strong>over 2,000 downloads</strong>.</p>
         <p class="built">Built with React Native, Supabase, Railway, AdMob and AppLovin.</p>
         <div class="stores">
           <a class="badge" href="https://apps.apple.com/gb/app/name-place-animal-thing-npat/id6759828697" target="_blank" rel="noopener" aria-label="Download NPAT on the App Store">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.03 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
             <span class="bt"><span class="s">Download on the</span><span class="b">App Store</span></span>
           </a>
           <a class="badge" href="https://play.google.com/store/apps/details?id=com.haquegames.napt" target="_blank" rel="noopener" aria-label="Get NPAT on Google Play">
@@ -372,28 +365,13 @@
   <div class="wrap">
     <h2>Why hire me</h2>
     <p class="intro">A few things I'd bring to your team.</p>
-    <div class="why">
-      <div class="why-card wide tint-blue">
-        <h3>A broad background</h3>
-        <p>I've done cloud support on AWS, production support for a major bank, led a team, and built and shipped my own app. It all sits on a <strong>First Class degree in Computer Engineering</strong>, so I'm comfortable whether the problem is in the infrastructure, the application or the code.</p>
-      </div>
-      <div class="why-card tint-green">
-        <h3>Major incident experience</h3>
-        <p>I've handled P1 and P2 incidents on platforms used by thousands of people, and I know how to keep everyone updated while the fix is underway.</p>
-      </div>
-      <div class="why-card tint-orange">
-        <h3>I automate repetitive work</h3>
-        <p>If I'm doing something by hand twice, I script it. At Barclays that saved my team about an hour per person every day.</p>
-      </div>
-      <div class="why-card tint-lilac">
-        <h3>Training and leadership</h3>
-        <p>As acting team lead I onboarded and trained over 10 engineers, and wrote the knowledge base the team used every day.</p>
-      </div>
-      <div class="why-card tint-sun">
-        <h3>Real ownership</h3>
-        <p>With NPAT I <strong>shipped a product to real customers</strong> on both app stores and covered every role myself.</p>
-      </div>
-    </div>
+    <ul class="why">
+      <li>I have a <strong>wide range of experience</strong>: AWS cloud support and production support at Barclays, time as acting team lead, and building my own app from scratch. My degree is in <strong>Computer Engineering (First Class)</strong>, so I'm comfortable reading code as well as logs.</li>
+      <li>I've run P1 and P2 incidents on platforms used by thousands of people, from the first alert through to the root cause, and kept users updated along the way.</li>
+      <li>At Barclays I automated manual tasks with Python, Bash and SQL, which saved my team about an hour per person every day.</li>
+      <li>As acting team lead I <strong>onboarded and trained over 10 engineers</strong>. In my next role I wrote a knowledge base of 150+ articles that users rated 95 out of 100.</li>
+      <li>I <strong>shipped NPAT to real customers</strong> on both app stores and did every role on it myself, from writing the code to marketing it.</li>
+    </ul>
   </div>
 </section>
 
@@ -401,7 +379,7 @@
 <section id="skills" class="soft">
   <div class="wrap">
     <h2>Skills</h2>
-    <p class="intro">The tools and practices I use day to day.</p>
+    <p class="intro">What I've used in production support and on my own projects.</p>
     <div class="skills">
       <div>
         <h3>Support and process</h3>
@@ -460,7 +438,7 @@
 <section class="contact" id="contact">
   <div class="wrap">
     <h2>Email me</h2>
-    <p>If you're hiring for application support, production support or a similar role in the UK, I'd love to hear from you. Email is the quickest way to reach me.</p>
+    <p>If you're hiring for an application or production support role in the UK, please get in touch. Email is the quickest way to reach me.</p>
     <a class="mail" href="mailto:faaizhaque@gmail.com">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 7 9 6 9-6"/></svg>
       faaizhaque@gmail.com
@@ -475,7 +453,7 @@
         GitHub
       </a>
       <a href="https://apps.apple.com/gb/app/name-place-animal-thing-npat/id6759828697" target="_blank" rel="noopener">
-        <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.910 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.03 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.090-4.61 1.090zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+        <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.910 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.090-4.61 1.090zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
         NPAT on the App Store
       </a>
       <a href="https://play.google.com/store/apps/details?id=com.haquegames.napt" target="_blank" rel="noopener">
@@ -494,7 +472,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Faaiz Haque · Haque Games</span>
-    <span><a href="support.html">App support</a> · <a href="privacy-policy.html">Privacy policy</a></span>
+    <span><a href="support.html">NPAT support</a> · <a href="privacy-policy.html">NPAT privacy policy</a></span>
   </div>
 </footer>
 
