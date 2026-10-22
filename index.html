@@ -111,9 +111,7 @@
 
   /* ---------- haque games ---------- */
   .studio{background:var(--sun-soft);border:1px solid var(--sun-line);border-radius:20px;padding:40px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start}
-  .appicon{width:96px;height:96px;border-radius:22px;background:#fff;border:1px solid var(--sun-line);box-shadow:0 6px 18px rgba(170,130,20,.15);display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:12px}
-  .appicon span{display:grid;place-items:center;border-radius:7px;background:var(--soft);border:1px solid var(--line);font-family:var(--sans);font-weight:700;font-size:17px;color:var(--ink)}
-  .appicon span.gold{background:var(--sun);border-color:#E3AE1F}
+  .appicon{display:block;width:96px;height:96px;border-radius:22px;box-shadow:0 6px 18px rgba(170,130,20,.18)}
   .studio .meta{font-size:15px;font-weight:600;color:#8A6A12;margin-bottom:6px}
   .studio h3{font-family:var(--serif);font-size:clamp(24px,3vw,30px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
   .studio p{margin-top:14px;max-width:62ch}
@@ -126,7 +124,7 @@
   .badge .s{font-size:11px;letter-spacing:.01em}
   .badge .b{font-size:18px;font-weight:600}
   .site{font-weight:600}
-  @media (max-width:720px){.studio{grid-template-columns:1fr;padding:26px;gap:22px}.appicon{width:80px;height:80px;border-radius:18px;padding:10px}.appicon span{font-size:15px}}
+  @media (max-width:720px){.studio{grid-template-columns:1fr;padding:26px;gap:22px}.appicon{width:80px;height:80px;border-radius:18px}}
 
   /* ---------- experience ---------- */
   .employer{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid var(--line)}
@@ -216,7 +214,7 @@
       <p class="status"><span class="dot" aria-hidden="true"></span>Open to work: application support roles in the UK</p>
     </div>
     <h1>Hi, I'm Faaiz.</h1>
-    <p class="lead">I'm an <strong>application support analyst</strong> with five years at <strong>Barclays</strong>, where I looked after risk and finance platforms used across the bank. In 2025 I started my own company, <a href="https://haquegames.com/" target="_blank" rel="noopener">Haque Games</a>, and built and launched its first mobile game on my own.</p>
+    <p class="lead">I'm an <strong>application support analyst</strong> with five years at <strong>Barclays</strong>, where I looked after risk and finance platforms used across the bank. In 2025 I started my own company, <a href="https://haquegames.com/" target="_blank" rel="noopener">Haque Games</a>, and built and launched its first mobile game.</p>
     <p class="lead">I'm now looking for my next role in <strong>application or production support, anywhere in the UK</strong>.</p>
     <div class="cta">
       <a class="btn primary" href="mailto:faaizhaque@gmail.com">
@@ -283,12 +281,12 @@
     <h2>What I'm working on now</h2>
     <p class="intro">Since leaving Barclays in 2025, I've been running Haque Games.</p>
     <div class="studio">
-      <div class="appicon" aria-hidden="true"><span>N</span><span>P</span><span class="gold">A</span><span>T</span></div>
+      <img class="appicon" src="npat-icon.png" alt="NPAT app icon" width="96" height="96">
       <div>
         <p class="meta">Haque Games · Founder · 2025 to present</p>
         <h3>Name, Place, Animal, Thing (NPAT)</h3>
         <p>NPAT is the first game from <a href="https://haquegames.com/" target="_blank" rel="noopener">Haque Games</a>. It's the classic word game, made for phones. You can play solo, against friends, or in a daily challenge.</p>
-        <p>I did all of it myself: the game design, the app and the backend, a database of <strong>100,000 words</strong>, the store releases, A/B testing, marketing and ad monetisation. It's live on both app stores with <strong>over 2,000 downloads</strong>.</p>
+        <p>The work covered the game design, the app and backend, a database of <strong>100,000 words</strong>, the store releases, A/B testing, marketing and ad monetisation. It's live on both app stores with <strong>over 5,000 downloads</strong>.</p>
         <p class="built">Built with React Native, Supabase, Railway, AdMob and AppLovin.</p>
         <div class="stores">
           <a class="badge" href="https://apps.apple.com/gb/app/name-place-animal-thing-npat/id6759828697" target="_blank" rel="noopener" aria-label="Download NPAT on the App Store">
@@ -366,11 +364,11 @@
     <h2>Why hire me</h2>
     <p class="intro">A few things I'd bring to your team.</p>
     <ul class="why">
-      <li>I have a <strong>wide range of experience</strong>: AWS cloud support and production support at Barclays, time as acting team lead, and building my own app from scratch. My degree is in <strong>Computer Engineering (First Class)</strong>, so I'm comfortable reading code as well as logs.</li>
+      <li>I have a <strong>wide range of experience</strong>: AWS cloud support and production support at Barclays, time as acting team lead, and building and launching a mobile app. My degree is in <strong>Computer Engineering (First Class)</strong>, so I'm comfortable reading code as well as logs.</li>
       <li>I've run P1 and P2 incidents on platforms used by thousands of people, from the first alert through to the root cause, and kept users updated along the way.</li>
       <li>At Barclays I automated manual tasks with Python, Bash and SQL, which saved my team about an hour per person every day.</li>
       <li>As acting team lead I <strong>onboarded and trained over 10 engineers</strong>. In my next role I wrote a knowledge base of 150+ articles that users rated 95 out of 100.</li>
-      <li>I <strong>shipped NPAT to real customers</strong> on both app stores and did every role on it myself, from writing the code to marketing it.</li>
+      <li>NPAT is <strong>live with real customers</strong> on both app stores, and I covered every role on it, from writing the code to marketing it.</li>
     </ul>
   </div>
 </section>
@@ -379,7 +377,7 @@
 <section id="skills" class="soft">
   <div class="wrap">
     <h2>Skills</h2>
-    <p class="intro">What I've used in production support and on my own projects.</p>
+    <p class="intro">What I've used in production support and on NPAT.</p>
     <div class="skills">
       <div>
         <h3>Support and process</h3>
