@@ -110,21 +110,21 @@
   @media (max-width:480px){.logos{grid-template-columns:1fr}}
 
   /* ---------- haque games ---------- */
-  .studio{background:var(--sun-soft);border:1px solid var(--sun-line);border-radius:20px;padding:40px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start}
-  .appicon{display:block;width:96px;height:96px;border-radius:22px;box-shadow:0 6px 18px rgba(170,130,20,.18)}
+  .studio{background:var(--sun-soft);border:1px solid var(--sun-line);border-radius:20px;padding:36px 40px}
   .studio .meta{font-size:15px;font-weight:600;color:#8A6A12;margin-bottom:6px}
   .studio h3{font-family:var(--serif);font-size:clamp(24px,3vw,30px);font-weight:700;letter-spacing:-.01em;line-height:1.2}
-  .studio p{margin-top:14px;max-width:62ch}
+  .studio p{margin-top:12px;max-width:64ch}
   .studio p strong{color:var(--ink);font-weight:600}
-  .studio .built{font-size:15px;color:var(--muted)}
-  .stores{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-  .badge{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;border-radius:10px;padding:8px 16px 8px 12px;min-height:52px;text-decoration:none;border:1px solid #000}
-  .badge:hover{background:#222;color:#fff}
-  .badge .bt{display:flex;flex-direction:column;line-height:1.15}
-  .badge .s{font-size:11px;letter-spacing:.01em}
-  .badge .b{font-size:18px;font-weight:600}
-  .site{font-weight:600}
-  @media (max-width:720px){.studio{grid-template-columns:1fr;padding:26px;gap:22px}.appicon{width:80px;height:80px;border-radius:18px}}
+  .studio .built{font-size:15px;color:var(--muted);margin-top:18px}
+  .games{list-style:none;margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .games li{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--sun-line);border-radius:14px;padding:16px}
+  .games img{width:64px;height:64px;border-radius:15px;flex:none;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+  .games p{margin-top:4px;font-size:15.5px;line-height:1.5}
+  .games .gname{margin-top:0;font-weight:700;color:var(--ink);font-size:17px}
+  .new{display:inline-block;margin-left:6px;font-size:11.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;background:var(--sun);color:#5A4200;padding:2px 8px;border-radius:999px;vertical-align:2px}
+  .games-btn{margin-top:22px}
+  @media (max-width:760px){.games{grid-template-columns:1fr}}
+  @media (max-width:720px){.studio{padding:24px 20px}}
 
   /* ---------- experience ---------- */
   .employer{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid var(--line)}
@@ -255,7 +255,7 @@
           <svg width="52" height="52" viewBox="0 0 24 24" aria-label="App Store" role="img"><rect width="24" height="24" rx="5.4" fill="#0D96F6"/><g transform="translate(4.6 4.6) scale(.617)"><path fill="#fff" d="M8.8086 14.9194l6.1107-11.0368c.0837-.1513.1682-.302.2437-.4584.0685-.142.1267-.2854.1646-.4403.0803-.3259.0588-.6656-.066-.9767-.1238-.3095-.3417-.5678-.6201-.7355a1.4175 1.4175 0 0 0-.921-.1924c-.3207.043-.6135.1935-.8443.4288-.1094.1118-.1996.2361-.2832.369-.092.1463-.175.2979-.259.4492l-.3864.6979-.3865-.6979c-.0837-.1515-.1667-.303-.2587-.4492-.0837-.1329-.1739-.2572-.2835-.369-.2305-.2353-.5233-.3857-.844-.429a1.4181 1.4181 0 0 0-.921.1926c-.2784.1677-.4964.426-.6203.7355-.1246.311-.1461.6508-.066.9767.038.155.0962.2984.1648.4403.0753.1564.1598.307.2437.4584l1.248 2.2543-4.8625 8.7825H2.0295c-.1676 0-.3351-.0007-.5026.0092-.1522.009-.3004.0284-.448.0714-.3108.0906-.5822.2798-.7783.548-.195.2665-.3006.5929-.3006.9279 0 .3352.1057.6612.3006.9277.196.2683.4675.4575.7782.548.1477.043.296.0623.4481.0715.1675.01.335.009.5026.009h13.0974c.0171-.0357.059-.1294.1-.2697.415-1.4151-.6156-2.843-2.0347-2.843zM3.113 18.5418l-.7922 1.5008c-.0818.1553-.1644.31-.2384.4705-.067.1458-.124.293-.1611.452-.0785.3346-.0576.6834.0645 1.0029.1212.3175.3346.583.607.7549.2727.172.5891.2416.9013.1975.3139-.044.6005-.1986.8263-.4402.1072-.1148.1954-.2424.2772-.3787.0902-.1503.1714-.3059.2535-.4612L6 19.4636c-.0896-.149-.9473-1.4704-2.887-.9218m20.5861-3.0056a1.4707 1.4707 0 0 0-.779-.5407c-.1476-.0425-.2961-.0616-.4483-.0705-.1678-.0099-.3352-.0091-.503-.0091H18.648l-4.3891-7.817c-.6655.7005-.9632 1.485-1.0773 2.1976-.1655 1.0333.0367 2.0934.546 3.0004l5.2741 9.3933c.084.1494.167.299.2591.4435.0837.131.1739.2537.2836.364.231.2323.5238.3809.8449.4232.3192.0424.643-.0244.9217-.1899.2784-.1653.4968-.4204.621-.7257.1246-.3072.146-.6425.0658-.9641-.0381-.1529-.0962-.2945-.165-.4346-.0753-.1543-.1598-.303-.2438-.4524l-1.216-2.1662h1.596c.1677 0 .3351.0009.5029-.009.1522-.009.3007-.028.4483-.0705a1.4707 1.4707 0 0 0 .779-.5407A1.5386 1.5386 0 0 0 24 16.452a1.539 1.539 0 0 0-.3009-.9158Z"/></g></svg>
           <svg width="46" height="46" viewBox="0 0 24 24" aria-label="Google Play" role="img"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg>
         </div>
-        <p><strong>NPAT, my mobile game</strong>Live on the App Store and Google Play</p>
+        <p><strong>Haque Games, my studio</strong>Two mobile games: NPAT and the new 20Q</p>
       </a>
       <a class="logo-card" href="#education">
         <div class="mark">
@@ -281,27 +281,29 @@
 <section id="now">
   <div class="wrap">
     <h2>What I'm working on now</h2>
-    <p class="intro">Since leaving Barclays in 2025, I've been running Haque Games.</p>
+    <p class="intro">Since leaving Barclays in 2025, I've been running my own games studio.</p>
     <div class="studio">
-      <img class="appicon" src="npat-icon.png" alt="NPAT app icon" width="96" height="96">
-      <div>
-        <p class="meta">Haque Games · Founder · 2025 to present</p>
-        <h3>Name, Place, Animal, Thing (NPAT)</h3>
-        <p>NPAT is the first game from <a href="https://haquegames.com/" target="_blank" rel="noopener">Haque Games</a>. It's the classic word game, made for phones. You can play solo, against friends, or in a daily challenge.</p>
-        <p>The work covered the game design, the app and backend, a database of <strong>100,000 words</strong>, the store releases, A/B testing, marketing and ad monetisation. It's live on both app stores with <strong>over 5,000 downloads</strong>.</p>
-        <p class="built">Built with React Native, Supabase, Railway, AdMob and AppLovin.</p>
-        <div class="stores">
-          <a class="badge" href="https://apps.apple.com/gb/app/name-place-animal-thing-npat/id6759828697" target="_blank" rel="noopener" aria-label="Download NPAT on the App Store">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
-            <span class="bt"><span class="s">Download on the</span><span class="b">App Store</span></span>
-          </a>
-          <a class="badge" href="https://play.google.com/store/apps/details?id=com.haquegames.napt" target="_blank" rel="noopener" aria-label="Get NPAT on Google Play">
-            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FBBC04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/><path fill="#4285F4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/><path fill="#34A853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/><path fill="#EA4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg>
-            <span class="bt"><span class="s">GET IT ON</span><span class="b">Google Play</span></span>
-          </a>
-          <a class="site" href="https://haquegames.com/" target="_blank" rel="noopener">haquegames.com ↗</a>
-        </div>
-      </div>
+      <p class="meta">Founder · 2025 to present</p>
+      <h3>Haque Games</h3>
+      <p>An independent studio making quick, friendly games for phones. Each one covered the game design, the app and backend, store releases, A/B testing and marketing.</p>
+      <ul class="games">
+        <li>
+          <img src="20q-icon.png" alt="20Q app icon" width="64" height="64">
+          <div>
+            <p class="gname">20 Questions: Revived <span class="new">New</span></p>
+            <p>A guessing game with an AI host and live multiplayer rooms. New on the App Store.</p>
+          </div>
+        </li>
+        <li>
+          <img src="npat-icon.png" alt="NPAT app icon" width="64" height="64">
+          <div>
+            <p class="gname">NPAT</p>
+            <p>The classic Name, Place, Animal, Thing word game. <strong>Over 5,000 downloads</strong> on the App Store and Google Play.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="built">Built with React Native, Supabase and Railway.</p>
+      <a class="btn primary games-btn" href="https://haquegames.com/" target="_blank" rel="noopener">Visit haquegames.com&nbsp;↗</a>
     </div>
   </div>
 </section>
